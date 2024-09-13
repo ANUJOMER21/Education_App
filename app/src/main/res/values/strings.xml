@@ -3,4 +3,7 @@
     <string name="base_url"></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_message">
+        Check out this fabulous educational app! 📚 Use my referral code %1$s to get up to 50% off. Download now: %2$s
+    </string>
 </resources>

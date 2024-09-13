@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
 }
 
 android {
@@ -42,12 +43,13 @@ dependencies {
     implementation (libs.autoimageslider)
 
 
-        implementation ("com.github.dangiashish:Auto-Image-Slider:1.0.6")
-
+        implementation (libs.auto.image.slider)
+    implementation (libs.github.glide)
     // Ktor client for making HTTP requests
     implementation("io.ktor:ktor-client-core:2.3.2")
     implementation("io.ktor:ktor-client-cio:2.3.2") // or another engine like OkHttp
     // Retrofit for API calls
+    implementation (libs.magicalexoplayer)
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     // Ktor serialization for converting JSON to Kotlin objects

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="10dp"
+    android:backgroundTint="@color/white"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+    app:strokeColor="@color/grey"
+    app:strokeWidth="1dp"
+
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/course_image"
+                    android:src="@drawable/book"
+                    android:layout_width="80dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY" />
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/ll2"
+
+
+                    android:layout_alignParentTop="true"
+
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:text="Course"
+                        android:layout_marginStart="10dp"
+
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:id="@+id/course_title"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="gone"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Course Progress"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:layout_alignParentBottom="true"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="@color/orange"
+                    style="?android:attr/progressBarStyleHorizontal"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

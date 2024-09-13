@@ -1,7 +1,13 @@
 package com.example.educationapp
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
+import android.content.SharedPreferences
 import android.widget.Toast
+import com.example.educationapp.Activity.MainActivity
+import com.example.educationapp.Activity.SignUpActivity
 
 class Misc (val context: Context){
     fun toast(message:String){
@@ -10,5 +16,59 @@ class Misc (val context: Context){
 
     fun startActivity(java: Class<SignUpActivity>) {
 
+    }
+    fun getid()=PreferenceHelper(context).getUserId()
+    fun showLogoutDialog( onLogout: () -> Unit) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Logout")
+        builder.setMessage("Do you want to logout?")
+
+        // Set up the "Yes" button
+        builder.setPositiveButton("Yes") { dialog: DialogInterface, _: Int ->
+            PreferenceHelper(context).clearUserId() // Call the logout function
+          context.startActivity(Intent(context, MainActivity::class.java))
+            onLogout
+            dialog.dismiss() // Dismiss the dialog
+        }
+
+        // Set up the "No" button
+        builder.setNegativeButton("No") { dialog: DialogInterface, _: Int ->
+            dialog.dismiss() // Dismiss the dialog without logging out
+        }
+
+        // Show the dialog
+        builder.create().show()
+    }
+
+}
+
+
+
+class PreferenceHelper(context: Context) {
+
+    private val sharedPreferences: SharedPreferences =
+        context.getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
+
+    companion object {
+        private const val USER_ID = "user_id"
+    }
+
+    // Save the user ID
+    fun saveUserId(userId: Int) {
+        val editor = sharedPreferences.edit()
+        editor.putInt(USER_ID, userId)
+        editor.apply()
+    }
+
+    // Retrieve the user ID
+    fun getUserId(): Int? {
+        return sharedPreferences.getInt(USER_ID, -1)
+    }
+
+    // Clear the user ID
+    fun clearUserId() {
+        val editor = sharedPreferences.edit()
+        editor.remove(USER_ID)
+        editor.apply()
     }
 }

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,16 +15,67 @@
         android:theme="@style/Theme.EducationApp"
         tools:targetApi="31">
         <activity
-            android:name=".HomePage"
+            android:name=".Activity.changepassword"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Activity.ProfileSettingPage"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.BuyLiveClass"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.SeeAllCategories"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.liveclassrequestpage"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.VideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Activity.intialprofile"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LiveRequestpage"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LiveLesson"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MyCourses"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BuyPage"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CourseDesc"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AllCourse"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CoursePage"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.HomePage"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

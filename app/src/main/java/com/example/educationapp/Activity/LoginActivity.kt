@@ -1,4 +1,4 @@
-package com.example.educationapp
+package com.example.educationapp.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,20 +10,23 @@ import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.LoginResponse
 import com.example.educationapp.APi.LoginUiState
+import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.APi.TestRepository
+import com.example.educationapp.Misc
+import com.example.educationapp.PreferenceHelper
 import com.example.educationapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModel: ApiViewModel
-    private lateinit var Misc:Misc
+    private lateinit var Misc: Misc
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Misc= Misc(applicationContext)
-        val repository= TestRepository()
+        val repository= MainRepository()
         viewModel = ViewModelProvider(this, AuthViewModelFactory(repository)).get(ApiViewModel::class.java)
         viewModel.loginState.observe(this) {state->
             when(state){
@@ -57,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         binding.Signup.setOnClickListener {
-            val Intent =Intent(this,SignUpActivity::class.java)
+            val Intent =Intent(this, SignUpActivity::class.java)
             startActivity(Intent)
         }
 
@@ -77,8 +80,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun handleLoginSuccess(response: LoginResponse) {
         if(response.success.equals("true")){
+            val preferenceHelper = PreferenceHelper(this)
+            preferenceHelper.saveUserId(response.id)
             Misc.toast("Login Success")
-            val Intent =Intent(this,HomePage::class.java)
+            val Intent =Intent(this, HomePage::class.java)
             Intent.putExtra("userid",response.id)
             startActivity(Intent)
             finish()

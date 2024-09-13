@@ -1,0 +1,28 @@
+<!-- res/menu/nav_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_svgrepo_com_4"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_mycourse"
+       android:icon="@drawable/course_svgrepo_com"
+        android:title="My Courses" />
+    <item
+        android:id="@+id/nav_live"
+        android:icon="@drawable/live_photo_svgrepo_com"
+        android:title="Live Class" />
+    <item
+        android:id="@+id/nav_profile"
+android:icon="@drawable/profile_circle_svgrepo_com"
+        android:title="Profile" />
+    <item
+        android:id="@+id/nav_refer"
+android:icon="@drawable/cashback_ui_web_svgrepo_com"
+        android:title="Refer &amp; Earn" />
+    <item
+        android:id="@+id/nav_logout"
+android:icon="@drawable/logout_2_svgrepo_com"
+        android:title="Logout" />
+
+</menu>

@@ -2,60 +2,25 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:backgroundTint="@color/white"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment">
+    tools:context=".Fragment.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
    <LinearLayout
        android:layout_width="match_parent"
+       android:background="@color/white"
        android:layout_height="match_parent"
        android:orientation="vertical">
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="Hi, Student"
-           android:textSize="24sp"
-         android:textStyle="bold"
-           android:textColor="@color/black"
-           android:layout_margin="10dp" />
-       <TextView
-            android:layout_width="match_parent"
-           android:text="Find your lessons today!"
-           android:textSize="13sp"
-android:layout_marginStart="10dp"
 
-           android:layout_height="wrap_content"/>
-       <com.google.android.material.card.MaterialCardView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_margin="10dp"
-           android:elevation="10dp"
-           android:radius="10dp">
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:orientation="horizontal"
-               android:layout_height="wrap_content">
-               <ImageView
-                   android:layout_width="20dp"
-                   android:layout_height="20dp"
-                   android:layout_gravity="center"
-                   android:src="@drawable/search_svgrepo_com_2"
-                   android:layout_margin="10dp"/>
-               <EditText
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:hint="Search Now"
-                   android:background="@null"
-                   android:layout_marginEnd="20dp"
-                   android:layout_gravity="center"/>
-           </LinearLayout>
-       </com.google.android.material.card.MaterialCardView>
        <com.codebyashish.autoimageslider.AutoImageSlider
            android:id="@+id/autoImageSlider"
            android:layout_width="match_parent"
+           android:layout_marginTop="10dp"
            android:layout_height="150dp"
            android:layout_marginStart="10dp"
+
            android:layout_marginEnd="10dp"
            app:ais_auto_sliding="true"
            app:ais_corner_radius="10"
@@ -66,7 +31,47 @@ android:layout_marginStart="10dp"
            app:layout_constraintEnd_toEndOf="parent" />
        <RelativeLayout
            android:layout_width="match_parent"
-           android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Category"
+               android:textColor="@color/black"
+               android:textSize="18sp"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:textStyle="bold"/>
+
+           <TextView
+               android:visibility="visible"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/seallcat"
+               android:layout_alignParentEnd="true"
+               android:layout_centerHorizontal="true"
+  android:gravity="center"
+
+
+               android:text="See All"
+               android:textColor="@color/orange"
+               android:textSize="16sp"
+               android:textStyle="bold" />
+
+       </RelativeLayout>
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+           android:id="@+id/category_rv"
+
+  />
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
            android:layout_height="wrap_content">
            <TextView
                android:layout_width="wrap_content"
@@ -81,6 +86,7 @@ android:layout_marginStart="10dp"
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:id="@+id/seall"
                android:layout_alignParentEnd="true"
                android:layout_centerHorizontal="true"
   android:gravity="center"
@@ -95,8 +101,9 @@ android:layout_marginStart="10dp"
        <androidx.recyclerview.widget.RecyclerView
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:layout_marginStart="10dp"
-           android:layout_marginEnd="10dp"
+
+           android:id="@+id/feature_course_rv"
+
            android:layout_marginBottom="10dp"/>
 
    </LinearLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LiveRequestpage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/ll1"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="visible"
+            android:src="@drawable/back_svgrepo_com_3"
+            android:id="@+id/back"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Course Name"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:id="@+id/course_title"/>
+    </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        app:strokeColor="@color/orange"
+        android:layout_margin="20dp"
+        android:backgroundTint="#1AFF6D00"
+        android:layout_height="wrap_content"
+     >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Live Lesson Details"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/orange"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_status"
+                    android:textSize="18sp"
+                    android:text="Status"
+
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/Status"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="18sp"
+                    android:text="Request Pending"
+
+                    android:textColor="@color/black"
+
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv"
+                    android:textSize="18sp"
+                    android:text="Date:"
+
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_date"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="18sp"
+                    android:text=""
+
+                    android:textColor="@color/black"
+
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+
+                    android:textSize="18sp"
+                    android:text="Time:"
+
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_time"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="18sp"
+                    android:text=""
+
+                    android:textColor="@color/black"
+
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/orange"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Link"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                 />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Learn about Live Lesson Requests"
+                    android:autoLink="web"
+                    android:textColor="#2962FF"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
