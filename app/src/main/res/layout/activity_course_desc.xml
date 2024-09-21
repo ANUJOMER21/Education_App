@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:id="@+id/ll1"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
             android:src="@drawable/back_svgrepo_com_3"
             android:id="@+id/back"
             />
@@ -26,10 +27,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Course Details"
-            android:textStyle="bold"
+               android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
+
             android:layout_gravity="center"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textColor="@color/black"
+
             android:layout_marginStart="15dp"
             android:id="@+id/course_title"/>
     </LinearLayout>
@@ -45,7 +49,7 @@ android:layout_below="@id/ll1"
             android:orientation="vertical">
         <com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
+    android:layout_margin="15dp"
     android:id="@+id/mcv"
     android:layout_below="@id/ll1"
     app:strokeColor="@color/orange"
@@ -62,8 +66,8 @@ android:layout_below="@id/ll1"
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
 
             android:layout_height="wrap_content">
 
@@ -75,14 +79,16 @@ android:layout_below="@id/ll1"
         android:id="@+id/coursename"
         android:textSize="22sp"
         android:textAlignment="viewStart"
-        android:textStyle="bold"
+           android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
         android:textColor="@color/orange"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:textStyle="bold"
+                       android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
                     android:layout_height="wrap_content"
                     android:text="duration"
                     android:textColor="@color/black"
@@ -92,10 +98,11 @@ android:layout_below="@id/ll1"
                     android:layout_marginTop="5dp"/>
                 <TextView
                     android:layout_width="wrap_content"
-                    android:textStyle="bold"
+                       android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
                     android:layout_height="wrap_content"
                     android:text="lesson"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:id="@+id/lesson"
@@ -107,8 +114,8 @@ android:layout_below="@id/ll1"
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#E2F0FD"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:layout_marginBottom="5dp"
                 app:strokeColor="#5B91FF"
                >
@@ -122,6 +129,7 @@ android:layout_below="@id/ll1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:fontFamily="@font/suse_regular"
                         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -131,7 +139,8 @@ android:layout_below="@id/ll1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Lessons"
-    android:textStyle="bold"
+       android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
     android:textSize="20sp"
     android:textColor="@color/black"
     />
@@ -139,6 +148,7 @@ android:layout_below="@id/ll1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/lesson"
+                android:layout_marginTop="10dp"
                 android:id="@+id/lessonrv"/>
         </LinearLayout>
 
@@ -150,12 +160,13 @@ android:layout_below="@id/ll1"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:id="@+id/mcv2"
-        android:elevation="10dp"
+        android:elevation="15dp"
 
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/rlbuy"
             android:background="#E2F0FD"
             >
             <TextView
@@ -175,7 +186,8 @@ android:layout_below="@id/ll1"
                 android:textSize="18sp"
 
                 android:layout_alignParentStart="true"
-                android:textStyle="bold"/>
+                   android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buyNow"
@@ -184,12 +196,29 @@ android:layout_below="@id/ll1"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/orange"
 
                 android:text="Buy Now"
                 app:cornerRadius="10dp" />
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/Rlgtc"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to Course"
+                android:textSize="18sp"
+                android:fontFamily="@font/suse_bold"
+                android:backgroundTint="@color/orange"
+                android:layout_margin="15dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/gtc"/>
+        </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

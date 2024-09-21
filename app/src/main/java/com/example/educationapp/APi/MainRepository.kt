@@ -176,6 +176,31 @@ return safeApiCall {
 }
     }
 
+    override suspend fun Searchet(courseName: String): Result<ArrayList<Course>> {
+        return safeApiCall {
+            apiService.GetSearch(courseName)
+        }
+    }
+
+    override suspend fun is_course_purchased(
+        phone: String,
+        course_id: String
+    ): Result<is_course_purchased> {
+        return safeApiCall {
+            apiService.is_course_purchased(phone, course_id)
+        }
+    }
+
+    override suspend fun rate_course(
+        user_id: String,
+        course_id: String,
+        rating: String
+    ): Result<rate_res> {
+        return safeApiCall {
+            apiService.rate_course(user_id,course_id,rating)
+        }
+    }
+
     private inline fun <T> safeApiCall(apiCall: () -> Response<T>): Result<T> {
         return try {
             val response = apiCall()

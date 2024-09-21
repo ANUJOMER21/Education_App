@@ -11,6 +11,7 @@
 
         app:andexo_show_controller="true"
         app:andexo_loop="finite"
+        app:andexo_show_full_screen="true"
         app:andexo_play_when_ready="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

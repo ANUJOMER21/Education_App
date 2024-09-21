@@ -13,8 +13,9 @@
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/back_svgrepo_com_3"
             android:id="@+id/back"
             />
@@ -22,9 +23,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="All Course"
+
             android:layout_toRightOf="@id/back"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="22sp"
+
+            android:fontFamily="@font/suse_bold"
             android:id="@+id/category"
             android:layout_centerVertical="true"
           android:layout_marginStart="10dp"
@@ -36,5 +40,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/rv"/>
 </LinearLayout>

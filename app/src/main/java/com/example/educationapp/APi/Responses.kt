@@ -11,6 +11,7 @@ data class LoginResponse(val success:String,val id:Int)
                     @SerializedName("courseName" ) var courseName : String? = null,
                     @SerializedName("price"      ) var  price:String?=null,
                     @SerializedName("description") var description: String?=null,
+                    @SerializedName("avg_rating") var avg_rating: String?=null,
                     @SerializedName("duration"   ) var duration   : String? = null):Serializable
 
  data class Category(
@@ -53,9 +54,14 @@ data class Fetch_Wallet(
 )
 data class success_response(
     @SerializedName("success" ) var success : String? = null,
+    @SerializedName("success" ) var successbool : Boolean? = null,
     @SerializedName("status") var status : String? = null,
     @SerializedName("message" ) var message : String? = null,
     @SerializedName("discounted_price" ) var discounted_price : String? = null,
+)
+data class rate_res(
+    @SerializedName("success" ) var success : Boolean? = null,
+    @SerializedName("message" ) var message : String?  = null
 )
 data class withdraw(
     @SerializedName("success"          ) var success         : Boolean? = null,
@@ -76,7 +82,16 @@ data class Data (
     @SerializedName("course_id"   ) var courseId    : String? = null,
     @SerializedName("title"       ) var title       : String? = null,
     @SerializedName("description" ) var description : String? = null,
+    @SerializedName("avg_rating") var avg_rating: String?=null,
     @SerializedName("course_image" ) var imageUrl : String? = null
+
+
+)
+data class is_course_purchased(
+
+    @SerializedName("success"           ) var success          : Boolean? = null,
+    @SerializedName("message"           ) var message          : String?  = null,
+    @SerializedName("already_purchased" ) var alreadyPurchased : Boolean? = null
 
 )
 data class CourseContent(

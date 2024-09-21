@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
          CoroutineScope(Dispatchers.Main).launch {
-             delay(5000)
+             delay(2000)
              val preferenceHelper= PreferenceHelper(this@MainActivity);
              if(preferenceHelper.getUserId()!=-1){
                  val intent = Intent(this@MainActivity, HomePage::class.java)

@@ -3,10 +3,7 @@ package com.example.educationapp.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -15,7 +12,7 @@ import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.Course
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Adapter.lessonadadapter
-import com.example.educationapp.R
+import com.example.educationapp.Misc
 import com.example.educationapp.databinding.ActivityCourseDescBinding
 
 class CourseDesc : AppCompatActivity() {
@@ -43,13 +40,22 @@ class CourseDesc : AppCompatActivity() {
             Toast.makeText(this,"Course not found",Toast.LENGTH_SHORT).show()
             finish()
         }
+        binding.gtc.setOnClickListener {
+            val intent=Intent(this,CoursePage::class.java)
+            intent.putExtra("courseid",course!!.courseId)
+            intent.putExtra("coursetitle",course!!.courseName)
+            intent.putExtra("image",course!!.imageUrl)
+            startActivity(intent)
 
+        }
         binding.buyNow.setOnClickListener {
              val Intent= Intent(this,BuyPage::class.java)
             Intent.putExtra("course",course)
             startActivity(Intent)
         }
         if(course!=null){
+            iscoursepurchsaed(course)
+
         viewmodel.fetchCourseContent(course.courseId!!)
             val lcrv=binding.lessonrv
             lcrv.layoutManager=LinearLayoutManager(this)
@@ -65,5 +71,31 @@ class CourseDesc : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun iscoursepurchsaed(course: Course) {
+       val uid=Misc(this).getid()
+        if(uid!=null){
+            viewmodel.fetchProfile(uid.toString())
+            viewmodel.profileState.observe(this){
+                if(it!=null){
+                    val phone=it.profile!!.phone
+                    viewmodel.iscoursepurchased(phone!!,course!!.courseId!!)
+                    viewmodel.iscoursepur.observe(this){
+                        if(it!=null) {
+                            if (it.alreadyPurchased == true) {
+                                binding.rlbuy.visibility = android.view.View.GONE
+                                binding.Rlgtc.visibility = android.view.View.VISIBLE
+                            }
+                            else{
+                                binding.rlbuy.visibility = android.view.View.VISIBLE
+                                binding.Rlgtc.visibility = android.view.View.GONE
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

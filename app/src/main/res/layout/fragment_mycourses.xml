@@ -13,9 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Courses"
+        android:fontFamily="@font/suse_bold"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -25,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/mycrv"
+        android:layout_margin="10dp"
         tools:listitem="@layout/mycourseview"
         />
 

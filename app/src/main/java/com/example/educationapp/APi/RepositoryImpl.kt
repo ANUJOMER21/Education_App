@@ -23,4 +23,7 @@ interface RepositoryImpl {
     suspend fun changepass(user_id: String,newpass:String,oldpass:String):Result<success_response>
     suspend fun fetch_wallet(phone: String):Result<Fetch_Wallet>
     suspend fun withdraw(phone: String,amount: String,upiid:String):Result<withdraw>
+    suspend fun Searchet(courseName:String):Result<ArrayList<Course>>
+    suspend fun is_course_purchased(phone: String,course_id: String):Result<is_course_purchased>
+    suspend fun  rate_course(user_id: String,course_id: String,rating: String):Result<rate_res>
 }

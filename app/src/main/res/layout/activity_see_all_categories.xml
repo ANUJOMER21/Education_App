@@ -15,8 +15,9 @@
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
             android:src="@drawable/back_svgrepo_com_3"
             android:id="@+id/back"
             />
@@ -24,18 +25,21 @@
         <TextView
             android:id="@+id/course_title"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/suse_bold"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:text="Categories"
 
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/crv"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_height="wrap_content">
 
     </androidx.recyclerview.widget.RecyclerView>

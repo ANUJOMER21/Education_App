@@ -324,6 +324,43 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
             )
         }
     }
+    private val _searchState = MutableLiveData<ArrayList<Course>?>()
+    val searchState: LiveData<ArrayList<Course>?> = _searchState
+    fun search(courseName: String){
+        viewModelScope.launch {
+            val result=repository.Searchet(courseName)
+            result.fold(
+                onSuccess = {_searchState.value=it},
+                onFailure = {_searchState.value=null}
+            )
+    }
+        }
+    private val _iscoursepur=MutableLiveData<is_course_purchased?>()
+    val iscoursepur:LiveData<is_course_purchased?> = _iscoursepur
+    fun iscoursepurchased(phone: String,courseid:String){
+        viewModelScope.launch {
+            val result = repository.is_course_purchased(phone, courseid)
+            result.fold(
+                onSuccess = { _iscoursepur.value = it },
+                onFailure = { _iscoursepur.value = null }
+            )
+        }
+    }
+    private val _rateCourseState = MutableLiveData<rate_res?>()
+    val rateCourseState: LiveData<rate_res?> = _rateCourseState
+    fun ratecourse(user_id: String,course_id: String,rating: String){
+        Log.d("rating","$user_id $course_id $rating")
+        viewModelScope.launch {
+            val result=repository.rate_course(user_id,course_id,rating)
+            result.fold(
+                onSuccess = {_rateCourseState.value=it},
+                onFailure = {
+                    Log.d("message",it.toString())
+                    _rateCourseState.value=null}
+            )
+
+        }
+    }
 
 }
 

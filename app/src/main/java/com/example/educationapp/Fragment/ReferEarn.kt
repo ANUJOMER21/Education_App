@@ -96,8 +96,8 @@ if(it!=null){
 
     binding.withdraw.setOnClickListener {
         val amt=
-            if(amount==null || amount!!.isEmpty())0 else amount.toString().toInt()
-        if(amt>=1500){
+            if(amount==null || amount!!.isEmpty())0.0 else amount.toString().toDouble()
+        if(amt>=15){
            showdialog(phone)
         }
         else{

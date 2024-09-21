@@ -226,7 +226,24 @@ class TestRepository : RepositoryImpl {
         TODO("Not yet implemented")
     }
 
+    override suspend fun Searchet(courseName: String): Result<ArrayList<Course>> {
+        TODO("Not yet implemented")
+    }
 
+    override suspend fun is_course_purchased(
+        phone: String,
+        course_id: String
+    ): Result<is_course_purchased> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun rate_course(
+        user_id: String,
+        course_id: String,
+        rating: String
+    ): Result<rate_res> {
+        TODO("Not yet implemented")
+    }
 
 
     val image="https://img.freepik.com/free-psd/geek-pride-day-banner-theme_23-2148559505.jpg?w=1800&t=st=1724172032~exp=1724172632~hmac=78e00ad993163f42b41048ee79bb80a563138c55ceed5dfe4ab88e6567eb0e21"

@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Refer &amp; Earn"
-        android:textStyle="bold"
+           android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
         android:layout_gravity="center"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:strokeColor="@color/orange"
-        android:backgroundTint="#E2F0FD"
+        android:backgroundTint="@color/orange"
         android:layout_margin="10dp">
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,18 +36,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Referral Code: ABCD0000"
-                android:textStyle="bold"
+                   android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
                 android:textSize="18sp"
                 android:layout_margin="10dp"
                 android:id="@+id/referal"
                 android:layout_alignParentStart="true"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textAlignment="center"
                 />
           <View
               android:layout_width="match_parent"
               android:layout_height="1dp"
-              android:background="@color/orange"
+              android:background="@color/white"
 
               android:layout_marginBottom="10dp"
 
@@ -57,8 +59,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:fontFamily="@font/suse_bold"
+                android:textSize="18sp"
+                android:textColor="@color/orange"
                 android:text="Share"
-                app:backgroundTint="@color/orange"
+                android:textAllCaps="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                app:backgroundTint="@color/white"
                 android:id="@+id/share"/>
 
         </LinearLayout>
@@ -74,7 +82,8 @@
         android:text="Wallet Balance:"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
+           android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
         android:layout_alignParentStart="true"/>
         <TextView
         android:layout_width="wrap_content"
@@ -83,7 +92,8 @@
             android:id="@+id/wallet"
             android:textSize="18sp"
         android:textColor="@color/black"
-        android:textStyle="bold"
+           android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
         android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
@@ -92,6 +102,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Withdraw Request"
+        android:fontFamily="@font/suse_bold"
+        android:textSize="18sp"
         app:backgroundTint="@color/orange"
         android:id="@+id/withdraw"/>
 </LinearLayout>

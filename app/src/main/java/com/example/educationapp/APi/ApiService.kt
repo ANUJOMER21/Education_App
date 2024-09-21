@@ -1,5 +1,6 @@
 package com.example.educationapp.APi
 
+import com.google.android.exoplayer2.Rating
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -67,6 +68,14 @@ interface ApiService {
     @POST("withdraw.php")
     @FormUrlEncoded
     suspend fun Withdraw_Request(@Field("phone") phone: String,@Field("amount") amount: String,@Field("upiId") upiId: String):Response<withdraw>
+    @GET("searchcourse.php")
+    suspend fun GetSearch(@Query("courseName") courseName: String):Response<ArrayList<Course>>
+    @POST("purchased_course.php")
+    @FormUrlEncoded
+    suspend fun is_course_purchased(@Field("phone") phone: String,@Field("course_id") course_id: String):Response<is_course_purchased>
+ @POST("rate_course.php")
+    @FormUrlEncoded
+    suspend fun rate_course(@Field("user_id") user_id: String,@Field("course_id") course_id: String,@Field("rating") rating: String):Response<rate_res>
 
 }
  const val BASE_URL = "https://works.diginspire.in/EducationalSite/api/"

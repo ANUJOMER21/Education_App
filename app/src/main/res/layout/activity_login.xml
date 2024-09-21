@@ -20,18 +20,22 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:text="Let's Sign In"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:layout_marginTop="40dp"
-
+android:fontFamily="@font/suse_bold"
         android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:textSize="24sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="normal"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="center"
         android:text="Login to Your Account to Continue your Courses"
         android:textColor="@color/black"
-
+android:fontFamily="@font/suse_regular"
 
         android:layout_marginStart="20dp"
         android:textSize="16sp"/>
@@ -82,7 +86,7 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+android:visibility="gone"
     android:text="Forgot Password?"
     android:textSize="16sp"
     android:layout_marginEnd="20dp"
@@ -101,6 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:id="@+id/signin"
+        android:textSize="18sp"
+        android:fontFamily="@font/suse_bold"
         android:text="Sign In"
         android:backgroundTint="@color/orange"
         android:layout_marginTop="20dp"
@@ -117,11 +123,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:textColor="@color/black"
+        android:fontFamily="@font/suse_regular"
         android:layout_height="wrap_content"
         android:text="Don't have an Accont?"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/suse_regular"
         android:layout_marginStart="10dp"
         android:textColor="@color/orange"
         android:text="SIGN UP"/>

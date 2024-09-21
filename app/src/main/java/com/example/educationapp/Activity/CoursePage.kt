@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.RatingBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +33,17 @@ class CoursePage : AppCompatActivity() {
         setContentView(Binding.root)
 
         val courseId=intent.getStringExtra("courseid")
+        val israted=Misc.getrating().contains(courseId)
+        if(israted){
+            Binding.rate.visibility= View.GONE
+
+        }
+        else{
+            Binding.rate.visibility= View.VISIBLE
+        }
+        Binding.rate.setOnClickListener {
+            showratingdialog(courseId)
+        }
         val coursetitle=intent.getStringExtra("coursetitle")
         val image=intent.getStringExtra("image")
         Binding.courseTitle.text=coursetitle
@@ -64,6 +76,46 @@ class CoursePage : AppCompatActivity() {
 
 
         }
+
+    private fun showratingdialog(courseId: String?) {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.ratingdialog)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        val ratingBar = dialog.findViewById<RatingBar>(R.id.ratingBar)
+        val rateButton = dialog.findViewById<MaterialButton>(R.id.rateButton)
+        rateButton.setOnClickListener {
+            val rating = ratingBar.rating.toInt()
+            sendRating(courseId,rating)
+            dialog.dismiss()
+        }
+        dialog.show()
+
+    }
+
+    private fun sendRating(courseId: String?, rating: Int) {
+        ViewModel.ratecourse(
+            Misc.getid().toString(),
+            courseId!!,
+            rating.toString()
+        )
+        ViewModel.rateCourseState.observe(this){
+            if(it!=null){
+                if(it.success==true){
+                    Misc.toast("Rating sent")
+                    Misc.saverating(courseId)
+                    Binding.rate.visibility= View.GONE
+                }
+                else{
+                    Misc.toast(it.message!!)
+                }
+            }
+            else{
+                Misc.toast("Something went wrong")
+            }
+        }
+
+    }
+
     private fun showRequestLiveClassDialog(userid: Int?, courseId: String) {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_request_live_class)

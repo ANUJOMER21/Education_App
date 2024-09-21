@@ -11,4 +11,8 @@
     <item name="android:background">@drawable/rounded_corner_background</item>
     <item name="android:padding">16dp</item>
     </style>
+    <style name="menuItemStyle">
+        <item name="fontFamily">@font/suse_regular</item>
+
+    </style>
 </resources>

@@ -88,5 +88,9 @@ class HomePage : AppCompatActivity() {
        binding.notify.setOnClickListener {
           supportFragmentManager.beginTransaction().replace(R.id.content_frame,profile()).commit()
                  }
+        binding.searchCard.setOnClickListener{
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

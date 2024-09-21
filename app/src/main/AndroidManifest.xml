@@ -15,6 +15,12 @@
         android:theme="@style/Theme.EducationApp"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.CourseDetailPage"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.changepassword"
             android:exported="false" />
         <activity

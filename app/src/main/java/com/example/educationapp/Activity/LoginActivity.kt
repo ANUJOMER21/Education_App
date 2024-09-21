@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showerror(message: String) {
-       Misc.toast(message)
+       Misc.toast("Login Failed")
         binding.progress.visibility= View.GONE
         binding.signin.visibility=View.VISIBLE
     }

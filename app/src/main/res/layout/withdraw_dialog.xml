@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:strokeColor="@color/orange"
-    android:layout_margin="16dp">
+    android:backgroundTint="@color/white"
+    app:strokeColor="@color/white"
+    android:padding="10dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,6 +18,7 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:textColor="@color/black"
+            android:fontFamily="@font/suse_bold"
             android:layout_height="wrap_content"
             android:text="Enter Withdrawal Amount:"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
@@ -37,6 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter UPI ID:"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/suse_bold"
             android:textColor="@color/black"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
 

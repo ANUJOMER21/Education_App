@@ -8,6 +8,7 @@ import android.content.SharedPreferences
 import android.widget.Toast
 import com.example.educationapp.Activity.MainActivity
 import com.example.educationapp.Activity.SignUpActivity
+import com.google.gson.Gson
 
 class Misc (val context: Context){
     fun toast(message:String){
@@ -18,6 +19,8 @@ class Misc (val context: Context){
 
     }
     fun getid()=PreferenceHelper(context).getUserId()
+    fun saverating(cid:String)=PreferenceHelper(context).saveratedcourse(cid)
+    fun getrating()=PreferenceHelper(context).getRatedCourse()
     fun showLogoutDialog( onLogout: () -> Unit) {
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Logout")
@@ -51,6 +54,18 @@ class PreferenceHelper(context: Context) {
 
     companion object {
         private const val USER_ID = "user_id"
+        private const val RATED_COURSE="rated_course"
+    }
+
+      fun saveratedcourse(cid:String){
+         val intialset=getRatedCourse()
+          intialset.add(cid)
+          val editor = sharedPreferences.edit()
+          editor.putStringSet(RATED_COURSE, intialset)
+          editor.apply()
+      }
+    fun getRatedCourse(): MutableSet<String> {
+        return sharedPreferences.getStringSet(RATED_COURSE, mutableSetOf()) ?: mutableSetOf()
     }
 
     // Save the user ID

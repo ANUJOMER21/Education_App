@@ -32,8 +32,7 @@ class BuyLiveClass : AppCompatActivity() {
                 if(it.success.equals("true")) {
                     val p = it.profile
                     if (p != null) {
-                        binding.name.text = p.username
-                        binding.email.text = p.email
+
                         phone= p.phone.toString()
             }
         }
@@ -48,7 +47,7 @@ class BuyLiveClass : AppCompatActivity() {
         val cost=intent.getStringExtra("cost")
         binding.coursename.text=title
         binding.courseFee.text="Rs. "+cost
-        binding.courseId.text=cid
+
         binding.back.setOnClickListener {
             finish()
         }

@@ -23,6 +23,14 @@ class CourseAdapter(
         val courseName=view.findViewById<TextView>(R.id.course_title)
         val courseDur=view.findViewById<TextView>(R.id.course_dur)
         val coursePrice=view.findViewById<TextView>(R.id.cost)
+        val description=view.findViewById<TextView>(R.id.description)
+        val star1:ImageView=view.findViewById(R.id.star1)
+        val star2:ImageView=view.findViewById(R.id.star2)
+        val star3:ImageView=view.findViewById(R.id.star3)
+        val star4:ImageView=view.findViewById(R.id.star4)
+        val star5:ImageView=view.findViewById(R.id.star5)
+        val rating:TextView=view.findViewById(R.id.rating)
+
 
 
 
@@ -43,6 +51,10 @@ class CourseAdapter(
         holder.courseName.text=item.courseName
         holder.courseDur.text=if(item.duration.isNullOrEmpty())  "0h 0min" else item.duration
         holder.coursePrice.text="Rs. "+item.price
+        holder.description.text=item.description
+        holder.rating.text=item.avg_rating
+        val rating=item.avg_rating?.toFloat()
+        setrating(holder,rating)
         Glide.with(holder.itemView.context)
             .load(item.imageUrl)
             .into(holder.courseImage)
@@ -51,5 +63,30 @@ class CourseAdapter(
             Intent.putExtra("course",item)
             context.startActivity(Intent)
         }
+
+    }
+
+    private fun setrating(holder: CourseAdapter.Vh, rating: Float?) {
+        if(rating!=null){
+            if(rating>=1){
+                holder.star1.setImageResource(R.drawable.star_svgrepo_com_2)
+            }
+            if(rating>=2){
+                holder.star2.setImageResource(R.drawable.star_svgrepo_com_2)
+            }
+            if(rating>=3){
+                holder.star3.setImageResource(R.drawable.star_svgrepo_com_2)
+            }
+            if(rating>=4){
+                holder.star4.setImageResource(R.drawable.star_svgrepo_com_2)
+            }
+            if(rating>=4.5){
+                holder.star5.setImageResource(R.drawable.star_svgrepo_com_2)
+            }
+
+
+
+        }
+
     }
 }

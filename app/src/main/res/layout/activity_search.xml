@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.SearchActivity">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:id="@+id/search_card"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        android:layout_toStartOf="@id/notify"
+        android:layout_toEndOf="@id/menu"
+        android:layout_centerVertical="true"
+        app:strokeColor="@color/orange"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:id="@+id/searchet"
+                android:layout_toStartOf="@id/search"
+                android:fontFamily="@font/suse_regular"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:layout_margin="10dp"
+                android:layout_alignParentStart="true"
+
+
+                android:hint="Search here..."/>
+            <ImageView
+                android:layout_width="20dp"
+                android:id="@+id/search"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_height="20dp"
+                android:src="@drawable/search_svgrepo_com_2"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:visibility="gone"
+    android:id="@+id/rv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notify"
+        android:text="No Course Found"
+        android:textColor="@color/black"
+        android:fontFamily="@font/suse_bold"
+        android:textSize="20sp"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"/>
+</LinearLayout>
