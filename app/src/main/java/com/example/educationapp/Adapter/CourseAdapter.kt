@@ -52,8 +52,9 @@ class CourseAdapter(
         holder.courseDur.text=if(item.duration.isNullOrEmpty())  "0h 0min" else item.duration
         holder.coursePrice.text="Rs. "+item.price
         holder.description.text=item.description
-        holder.rating.text=item.avg_rating
-        val rating=item.avg_rating?.toFloat()
+
+        var rating= item.avg_rating?.toFloat()
+        holder.rating.text=(rating!!).toString()
         setrating(holder,rating)
         Glide.with(holder.itemView.context)
             .load(item.imageUrl)

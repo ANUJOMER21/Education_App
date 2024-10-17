@@ -113,8 +113,8 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
     private val _changepass = MutableLiveData<success_response?>()
     val changepass: LiveData<success_response?> = _changepass
 
-    private val _discountState = MutableLiveData<success_response?>()
-    val discountState: LiveData<success_response?> = _discountState
+    private val _discountState = MutableLiveData<disc_success_response?>()
+    val discountState: LiveData<disc_success_response?> = _discountState
 
     private val _purchaseState = MutableLiveData<success_response?>()
     val purchaseState: LiveData<success_response?> = _purchaseState

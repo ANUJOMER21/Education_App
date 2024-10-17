@@ -30,7 +30,7 @@ class MainRepository : RepositoryImpl {
                     phoneNumber = phone,
                     referralCode = referral,
                     email = email,
-                    secondaryphoneNumber =secondphone
+                    secondaryPhone =secondphone
                 )
             )
         }
@@ -86,7 +86,7 @@ class MainRepository : RepositoryImpl {
 
     }
 
-    override suspend fun discount(courseid: String, copon: String): Result<success_response> {
+    override suspend fun discount(courseid: String, copon: String): Result<disc_success_response> {
         return safeApiCall {
             apiService.discount(courseid,copon)
         }

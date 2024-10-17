@@ -52,9 +52,14 @@ data class Fetch_Wallet(
     @SerializedName("message" ) var message : String?  = null,
     @SerializedName("amount"  ) var amount  : String?  = null
 )
+data class disc_success_response(
+    @SerializedName("message" ) var message : String? = null,
+    @SerializedName("discounted_price" ) var discounted_price : String? = null,
+    @SerializedName("success" ) var successbool : Boolean? = null,
+)
 data class success_response(
     @SerializedName("success" ) var success : String? = null,
-    @SerializedName("success" ) var successbool : Boolean? = null,
+
     @SerializedName("status") var status : String? = null,
     @SerializedName("message" ) var message : String? = null,
     @SerializedName("discounted_price" ) var discounted_price : String? = null,
