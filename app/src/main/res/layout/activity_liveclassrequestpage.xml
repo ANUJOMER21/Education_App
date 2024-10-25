@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".Activity.liveclassrequestpage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/ll1"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/back_svgrepo_com_3"
+            android:id="@+id/back"
+            />
+
+        <TextView
+            android:id="@+id/course_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="Live Class Detail"
+            android:fontFamily="@font/suse_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/orange"
+        android:layout_marginBottom="5dp"
+        app:strokeColor="@color/grey"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="class title"
+                android:textAlignment="center"
+                android:id="@+id/title"
+                android:fontFamily="@font/suse_bold"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="2dp"
+             android:background="@color/white"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+android:fontFamily="@font/suse_bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/desc"
+                android:fontFamily="@font/suse_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Live Class Id:"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start time"
+                    android:fontFamily="@font/suse_regular"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/course_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="00:00"
+                    android:fontFamily="@font/suse_regular"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+android:orientation="vertical"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Meeting Link"
+                    android:fontFamily="@font/suse_bold"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/totalfee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:autoLink="web"
+                    android:textColorLink="@color/white"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+          />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

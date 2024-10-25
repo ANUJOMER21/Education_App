@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CourseDesc">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/ll1"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            android:src="@drawable/back_svgrepo_com_3"
+            android:id="@+id/back"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Live Lesson Requests"
+            android:textStyle="bold"
+            android:fontFamily="@font/suse_bold"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:id="@+id/course_title"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/ll1"
+        tools:listitem="@layout/lessonview"
+
+
+        android:id="@+id/scv">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>
