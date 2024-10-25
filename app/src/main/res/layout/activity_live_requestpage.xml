@@ -33,7 +33,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
-        app:strokeColor="@color/orange"
+        app:strokeColor="@color/grey"
         android:layout_margin="20dp"
         android:backgroundTint="#1AFF6D00"
         android:layout_height="wrap_content"

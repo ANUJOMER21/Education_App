@@ -24,7 +24,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:strokeColor="@color/orange"
+        app:strokeColor="@color/grey"
         android:backgroundTint="@color/orange"
         android:layout_margin="10dp">
         <LinearLayout

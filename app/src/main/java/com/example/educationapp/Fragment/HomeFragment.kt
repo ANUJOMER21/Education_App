@@ -95,10 +95,10 @@ class HomeFragment : Fragment() {
     }
     private fun setFeatureCourse() {
         val courseRecyclerView=binding.featureCourseRv
-        courseRecyclerView.layoutManager=LinearLayoutManager(requireContext())
+        courseRecyclerView.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         viewModel.getFeatureCourse()
         viewModel.featureCourseState.observe(viewLifecycleOwner){
-            val adapter=CourseAdapter(requireActivity(),it)
+            val adapter=CourseAdapter(requireActivity(),it,true)
             courseRecyclerView.adapter=adapter
         }
     }

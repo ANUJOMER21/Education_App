@@ -16,14 +16,14 @@ import com.example.educationapp.R
 
 class CourseAdapter(
     val context: Context,
-    val courselist:ArrayList<Course>
+    val courselist:ArrayList<Course>,val ishome:Boolean=false
     ) :RecyclerView.Adapter<CourseAdapter.Vh>(){
     class Vh(view: View): RecyclerView.ViewHolder(view){
         val courseImage=view.findViewById<ImageView>(R.id.course_image)
         val courseName=view.findViewById<TextView>(R.id.course_title)
         val courseDur=view.findViewById<TextView>(R.id.course_dur)
         val coursePrice=view.findViewById<TextView>(R.id.cost)
-        val description=view.findViewById<TextView>(R.id.description)
+      //  val description=view.findViewById<TextView>(R.id.description)
         val star1:ImageView=view.findViewById(R.id.star1)
         val star2:ImageView=view.findViewById(R.id.star2)
         val star3:ImageView=view.findViewById(R.id.star3)
@@ -38,7 +38,9 @@ class CourseAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Vh {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.course_view, parent, false)
+            .inflate(
+            if(ishome) R.layout.course_view2 else R.layout.course_view
+                , parent, false)
         return Vh(view)
     }
 
@@ -51,7 +53,7 @@ class CourseAdapter(
         holder.courseName.text=item.courseName
         holder.courseDur.text=if(item.duration.isNullOrEmpty())  "0h 0min" else item.duration
         holder.coursePrice.text="Rs. "+item.price
-        holder.description.text=item.description
+      //  holder.description.text=item.description
 
         var rating= item.avg_rating?.toFloat()
         holder.rating.text=(rating!!).toString()

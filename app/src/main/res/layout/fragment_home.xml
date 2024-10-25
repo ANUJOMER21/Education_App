@@ -16,23 +16,23 @@
        android:orientation="vertical">
 <com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
-    android:layout_marginStart="10dp"
-    android:backgroundTint="@color/white"
-    app:strokeColor="@color/orange"
-    android:layout_marginBottom="10dp"
-    android:layout_marginTop="10dp"
-    app:strokeWidth="3dp"
-    app:cardElevation="10dp"
 
-    android:layout_marginEnd="10dp"
+    android:backgroundTint="@color/white"
+    app:strokeColor="@color/white"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="10dp"
+    app:strokeWidth="1dp"
+ app:cardCornerRadius="5dp"
+
+
     android:layout_height="wrap_content">
 
 
        <com.codebyashish.autoimageslider.AutoImageSlider
            android:id="@+id/autoImageSlider"
            android:layout_width="match_parent"
-android:layout_margin="10dp"
-           android:layout_height="160dp"
+
+           android:layout_height="150dp"
 
            app:ais_auto_sliding="true"
            app:ais_corner_radius="10"
@@ -46,14 +46,15 @@ android:layout_margin="10dp"
            android:layout_width="match_parent"
                 android:layout_marginStart="10dp"
            android:layout_marginEnd="10dp"
+           android:layout_marginTop="10dp"
            android:layout_height="wrap_content">
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Category"
-               android:fontFamily="@font/suse_bold"
+               android:text="Explore Topics"
+               android:fontFamily="@font/suse_regular"
                android:textColor="@color/black"
-               android:textSize="20sp"
+               android:textSize="16sp"
                android:layout_centerVertical="true"
                android:layout_alignParentStart="true"
                android:textStyle="bold"/>
@@ -63,22 +64,20 @@ android:layout_margin="10dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:id="@+id/seallcat"
-               android:fontFamily="@font/suse_bold"
+               android:fontFamily="@font/suse_regular"
                android:layout_alignParentEnd="true"
                android:layout_centerHorizontal="true"
-  android:gravity="center"
-
-
+               android:gravity="center"
                android:text="See All"
                android:textColor="@color/orange"
-               android:textSize="20sp"
+               android:textSize="16sp"
                android:textStyle="bold" />
 
        </RelativeLayout>
        <androidx.recyclerview.widget.RecyclerView
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_marginTop="10dp"
+           android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:layout_marginStart="10dp"
            android:layout_marginEnd="10dp"
@@ -89,15 +88,15 @@ android:layout_margin="10dp"
            android:layout_width="match_parent"
            android:layout_marginStart="10dp"
            android:layout_marginEnd="10dp"
-           android:layout_marginTop="10dp"
+           android:layout_marginTop="5dp"
            android:layout_height="wrap_content">
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Featured Course"
+               android:text="Recommended for you"
                android:textColor="@color/black"
-               android:fontFamily="@font/suse_bold"
-               android:textSize="20sp"
+               android:fontFamily="@font/suse_regular"
+               android:textSize="17sp"
                android:layout_centerVertical="true"
                android:layout_alignParentStart="true"
                android:textStyle="bold"/>
@@ -106,15 +105,15 @@ android:layout_margin="10dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:id="@+id/seall"
-               android:fontFamily="@font/suse_bold"
+               android:fontFamily="@font/suse_regular"
                android:layout_alignParentEnd="true"
                android:layout_centerHorizontal="true"
-  android:gravity="center"
+               android:gravity="center"
 
 
                android:text="See All"
                android:textColor="@color/orange"
-               android:textSize="20sp"
+               android:textSize="17sp"
                android:textStyle="bold" />
 
        </RelativeLayout>
@@ -122,7 +121,7 @@ android:layout_margin="10dp"
            android:layout_width="match_parent"
            android:layout_marginStart="10dp"
            android:layout_marginEnd="10dp"
-           android:layout_marginTop="10dp"
+           android:layout_marginTop="5dp"
            android:layout_height="match_parent"
 
            android:id="@+id/feature_course_rv"

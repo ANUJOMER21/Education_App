@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    app:strokeColor="@color/orange"
+    app:strokeColor="@color/grey"
 
     android:layout_marginTop="5dp"
     android:backgroundTint="@color/white"

@@ -16,67 +16,122 @@
         <RelativeLayout
             android:id="@+id/toolbar"
             android:background="@color/orange"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
 
 
             >
+        <RelativeLayout
+           android:id="@+id/rlv1"
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+
+            >
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_margin="15dp"
+                android:backgroundTint="#34BBCFFD"
+                app:strokeColor="@color/orange"
+                android:id="@+id/mcv"
+
+                android:layout_height="wrap_content"
+               >
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/menu_svgrepo_com"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:id="@+id/menu"
                 app:tint="@color/white" />
-         <com.google.android.material.card.MaterialCardView
-             android:layout_width="match_parent"
-             android:id="@+id/search_card"
-             android:backgroundTint="@color/white"
-             android:layout_toStartOf="@id/notify"
-             android:layout_toEndOf="@id/menu"
-             android:layout_centerVertical="true"
-             app:strokeColor="@color/orange"
-             android:layout_height="wrap_content">
-             <RelativeLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
-                 <TextView
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:textStyle="normal"
-                     android:textColor="@color/black"
-                     android:layout_toStartOf="@id/search"
-                     android:fontFamily="@font/suse_regular"
-                     android:layout_centerVertical="true"
-                     android:textSize="16sp"
-                   android:layout_margin="10dp"
-                     android:layout_alignParentStart="true"
+            </com.google.android.material.card.MaterialCardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+
+                android:layout_toStartOf="@id/notify"
+                android:layout_toEndOf="@id/mcv"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/suse_regular"
+                    android:text="Hello Student"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Name"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/suse_bold"
+                    android:id="@+id/studentname"/>
 
 
-                     android:text="Search here..."/>
-                 <ImageView
-                     android:layout_width="20dp"
-                     android:id="@+id/search"
-                     android:layout_alignParentEnd="true"
-                     android:layout_centerVertical="true"
-                     android:layout_height="20dp"
-                     android:src="@drawable/search_svgrepo_com_2"
-                     android:layout_marginEnd="10dp"/>
-
-             </RelativeLayout>
-         </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
             <ImageView
                 android:id="@+id/notify"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/profile_circle_svgrepo_com"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
+android:layout_centerVertical="true"
                 android:layout_margin="15dp"
                 app:tint="@color/white" />
+        </RelativeLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:id="@+id/search_card"
+             android:backgroundTint="#3A93B4FB"
+
+             android:layout_marginBottom="10dp"
+             android:layout_marginStart="15dp"
+             android:layout_marginEnd="15dp"
+             android:layout_below="@id/rlv1"
+             app:strokeColor="@color/orange"
+             android:layout_height="wrap_content">
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+                 <ImageView
+                     android:layout_width="25dp"
+                     android:id="@+id/search"
+                     android:layout_alignParentStart="true"
+                     android:layout_centerVertical="true"
+                     android:layout_height="25dp"
+                     android:src="@drawable/search_svgrepo_com_2"
+                     android:layout_marginStart="10dp"
+                     app:tint="@color/white" />
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:textStyle="normal"
+                     android:textColor="@color/white"
+            android:layout_toEndOf="@id/search"
+                     android:fontFamily="@font/suse_regular"
+                     android:layout_centerVertical="true"
+                     android:textSize="18sp"
+                   android:layout_margin="10dp"
+
+                 android:textColorHint="#CCCCCC"
+
+                     android:hint="What do you want to learn?"/>
+
+
+             </RelativeLayout>
+         </com.google.android.material.card.MaterialCardView>
+
 
         </RelativeLayout>
 

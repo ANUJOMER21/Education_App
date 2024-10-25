@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:id="@+id/ll1"
+
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <ImageView
@@ -27,12 +28,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="15dp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
             android:text="Checkout"
-
+android:gravity="start"
             android:textColor="@color/black"
-            android:textSize="22sp"
-            android:fontFamily="@font/suse_bold" />
+            android:textSize="18sp"
+            android:fontFamily="@font/suse_regular" />
     </LinearLayout>
 
     <ScrollView
@@ -71,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:text="Next JS: The Complete Developer's Guide"
                         android:id="@+id/coursename"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:fontFamily="@font/suse_bold"
                         android:textAlignment="viewStart"
                         android:layout_marginStart="10dp"
@@ -108,7 +110,7 @@
                         android:paddingBottom="5dp"
                         android:text="Rs.1000"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:layout_margin="10dp"
                         android:textStyle="bold" />
 
@@ -190,7 +192,7 @@ android:visibility="gone"
                         android:layout_marginEnd="15dp"
 
                         android:layout_marginBottom="5dp"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/white"
                         android:fontFamily="@font/suse_bold"
 
@@ -208,7 +210,7 @@ android:visibility="gone"
                             android:text="Sub Total:"
                             android:textColor="@color/white"
                             android:fontFamily="@font/suse_regular"
-                            android:textSize="20sp"
+                            android:textSize="16sp"
                             />
 
                         <TextView
@@ -219,7 +221,7 @@ android:visibility="gone"
                             android:text="Rs.00"
                             android:textColor="@color/white"
                             android:fontFamily="@font/suse_regular"
-                            android:textSize="20sp" />
+                            android:textSize="16sp" />
 
                     </RelativeLayout>
 
@@ -236,7 +238,7 @@ android:visibility="gone"
                             android:text="Discount:"
                             android:textColor="@color/white"
                             android:fontFamily="@font/suse_regular"
-                            android:textSize="20sp"
+                            android:textSize="16sp"
                             />
 
                         <TextView
@@ -247,7 +249,7 @@ android:visibility="gone"
                             android:text="Rs.00"
                             android:textColor="@color/white"
                             android:fontFamily="@font/suse_regular"
-                            android:textSize="20sp" />
+                            android:textSize="16sp" />
 
                     </RelativeLayout>
 
@@ -266,7 +268,7 @@ android:visibility="gone"
                             android:textColor="@color/white"
 
                             android:fontFamily="@font/suse_bold"
-                            android:textSize="22sp"
+                            android:textSize="18sp"
                             />
 
                         <TextView
@@ -277,7 +279,7 @@ android:visibility="gone"
                             android:text="Rs.00"
                             android:textColor="@color/white"
 
-                            android:textSize="22sp"
+                            android:textSize="18sp"
                             android:fontFamily="@font/suse_bold" />
 
                     </RelativeLayout>
@@ -299,7 +301,7 @@ android:visibility="gone"
                 android:paddingStart="50dp"
                 android:paddingEnd="50dp"
                 android:layout_gravity="center"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:text="Proceed to Payment"
 
                 android:layout_marginTop="10dp"

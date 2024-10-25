@@ -16,7 +16,7 @@
         android:layout_toStartOf="@id/notify"
         android:layout_toEndOf="@id/menu"
         android:layout_centerVertical="true"
-        app:strokeColor="@color/orange"
+        app:strokeColor="@color/grey"
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"

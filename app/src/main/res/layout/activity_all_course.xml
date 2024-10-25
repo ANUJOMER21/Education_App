@@ -22,13 +22,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="All Course"
+            android:text="All Courses"
 
             android:layout_toRightOf="@id/back"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="18sp"
 
-            android:fontFamily="@font/suse_bold"
+            android:fontFamily="@font/suse_regular"
             android:id="@+id/category"
             android:layout_centerVertical="true"
           android:layout_marginStart="10dp"

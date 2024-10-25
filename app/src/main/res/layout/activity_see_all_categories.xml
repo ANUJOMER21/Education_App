@@ -32,7 +32,7 @@
             android:text="Categories"
 
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
