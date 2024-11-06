@@ -64,8 +64,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact 📬
 
 - **Email:** [Anujomer111@gmail.com]
-- **GitHub:** [Your GitHub Profile]((https://github.com/ANUJOMER21))
+- **GitHub:** [ANUJOMER21]((https://github.com/ANUJOMER21))
 
-*Replace the placeholders with your actual contact information.*
+
 
 ---
