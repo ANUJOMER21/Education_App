@@ -69,6 +69,12 @@ class HomeFragment : Fragment() {
             val intent=Intent(requireContext(),SeeAllCategories::class.java)
          startActivity(intent)
         }
+        binding.seallFeature.setOnClickListener {
+            val intent=Intent(requireContext(),AllCourse::class.java)
+            intent.putExtra("cat","All Courses")
+            intent.putExtra("id","0")
+            startActivity(intent)
+        }
         binding.seall.setOnClickListener {
             val intent=Intent(requireContext(),AllCourse::class.java)
             intent.putExtra("cat","All Courses")
@@ -76,6 +82,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
         setFeatureCourse()
+        setFeatureCourse2()
         setCategory()
         val id=PreferenceHelper(requireContext()).getUserId()
         viewModel.fetchProfile(id.toString())
@@ -84,6 +91,18 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+
+    private fun setFeatureCourse2() {
+        val courseRecyclerView=binding.featureCourseRv2
+        courseRecyclerView.layoutManager= LinearLayoutManager(requireActivity(),LinearLayoutManager.HORIZONTAL,false)
+        viewModel.getAllCategory()
+        viewModel.featureCourseState.observe(viewLifecycleOwner){
+            val adapter=CourseAdapter(requireActivity(),it,true)
+            courseRecyclerView.adapter=adapter
+        }
+
+    }
+
     private fun setCategory(){
         val categoryRecyclerView=binding.categoryRv
         categoryRecyclerView.layoutManager= LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)

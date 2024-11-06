@@ -9,37 +9,35 @@
     android:layout_height="match_parent"
     tools:context=".Activity.CourseDesc">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:background="@color/orange"
         android:orientation="horizontal"
-        android:id="@+id/ll1"
-        android:layout_margin="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:visibility="gone"
             android:src="@drawable/back_svgrepo_com_3"
-            android:id="@+id/back"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Live Lesson Requests"
-            android:textStyle="bold"
-            android:fontFamily="@font/suse_bold"
-            android:layout_gravity="center"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="10dp"
-            android:id="@+id/course_title"/>
-    </LinearLayout>
 
+            android:layout_margin="15dp"
+            android:id="@+id/back"
+            app:tint="@color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live Lesson Detail"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/suse_regular"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_below="@id/ll1"
+        android:layout_below="@id/toolbar"
         tools:listitem="@layout/lessonview"
 
 

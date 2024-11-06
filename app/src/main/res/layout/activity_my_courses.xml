@@ -9,19 +9,31 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Activity.CoursePage">
-    <TextView
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:background="@color/orange"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="My Courses"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:textSize="22sp"
-        android:fontFamily="@font/suse_bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="15dp"
-        android:id="@+id/course_title"/>
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back_svgrepo_com_3"
+
+            android:layout_margin="15dp"
+            android:id="@+id/back"
+            app:tint="@color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Name"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/suse_regular"
+            android:textSize="18sp"
+            android:id="@+id/course_title"
+            android:textStyle="bold"/>
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

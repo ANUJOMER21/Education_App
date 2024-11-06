@@ -55,7 +55,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
-
+         android:id="@+id/namell"
                 android:layout_toStartOf="@id/notify"
                 android:layout_toEndOf="@id/mcv"
                 android:layout_centerVertical="true"
@@ -80,6 +80,30 @@
 
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+         android:id="@+id/fragname"
+                android:visibility="gone"
+                android:layout_toStartOf="@id/notify"
+                android:layout_toEndOf="@id/mcv"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Name"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/suse_bold"
+                    android:id="@+id/pagename"/>
+
+
+            </LinearLayout>
+
             <ImageView
                 android:id="@+id/notify"
                 android:layout_width="30dp"

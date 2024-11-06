@@ -3,15 +3,40 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:padding="16dp"
-    android:background="@color/white"
 
+    android:background="@color/white"
+android:orientation="vertical"
 
     app:strokeColor="#DADADA">
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:background="@color/orange"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back_svgrepo_com_3"
+
+            android:layout_margin="15dp"
+            android:id="@+id/back"
+            app:tint="@color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Profile"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/suse_regular"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 <com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
     android:backgroundTint="@color/white"
     app:strokeWidth="1dp"
+    android:layout_margin="10dp"
     app:strokeColor="@color/grey"
     app:cardElevation="8dp"
     android:layout_height="match_parent">

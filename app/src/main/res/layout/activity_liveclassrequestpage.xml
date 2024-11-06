@@ -9,36 +9,35 @@
     android:layout_height="match_parent"
     tools:context=".Activity.liveclassrequestpage">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:background="@color/orange"
         android:orientation="horizontal"
-        android:id="@+id/ll1"
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/back_svgrepo_com_3"
-            android:id="@+id/back"
-            />
 
+            android:layout_margin="15dp"
+            android:id="@+id/back"
+            app:tint="@color/white" />
         <TextView
-            android:id="@+id/course_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
             android:text="Live Class Detail"
-            android:fontFamily="@font/suse_bold"
-            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:id="@+id/course_title"
+            android:textColor="@color/white"
+            android:fontFamily="@font/suse_regular"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_margin="20dp"
         app:cardCornerRadius="20dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="#0056FD"
         android:layout_marginBottom="5dp"
         app:strokeColor="@color/grey"
         android:layout_centerInParent="true"

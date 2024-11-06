@@ -55,8 +55,8 @@ class CourseAdapter(
         holder.coursePrice.text="Rs. "+item.price
       //  holder.description.text=item.description
 
-        var rating= item.avg_rating?.toFloat()
-        holder.rating.text=(rating!!).toString()
+        val rating= item.avg_rating?.toFloat()
+        holder.rating.text=(rating).toString()
         setrating(holder,rating)
         Glide.with(holder.itemView.context)
             .load(item.imageUrl)

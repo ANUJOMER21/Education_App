@@ -25,6 +25,7 @@ class changepassword : AppCompatActivity() {
         viewmodel = ViewModelProvider(this, AuthViewModelFactory(repository)).get(ApiViewModel::class.java)
         binding=ActivityChangepasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.back.setOnClickListener { onBackPressed() }
         binding.changePasswordButton.setOnClickListener {
             val newpassword=binding.newPasswordEditText.text.toString()
             val oldpassword=binding.oldPasswordEditText.text.toString()

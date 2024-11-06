@@ -8,40 +8,37 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Activity.AllCourse">
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:background="@color/orange"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/back_svgrepo_com_3"
+
+            android:layout_margin="15dp"
             android:id="@+id/back"
-            />
+            app:tint="@color/white" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="All Courses"
-
-            android:layout_toRightOf="@id/back"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-
-            android:fontFamily="@font/suse_regular"
             android:id="@+id/category"
-            android:layout_centerVertical="true"
-          android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/suse_regular"
+            android:textSize="18sp"
             android:textStyle="bold"/>
-
-
-
-    </RelativeLayout>
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:id="@+id/rv"/>
 </LinearLayout>

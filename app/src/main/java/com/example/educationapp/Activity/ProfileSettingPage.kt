@@ -23,6 +23,9 @@ class ProfileSettingPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityProfileSettingPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.back.setOnClickListener {
+            onBackPressed()
+        }
         val repository= MainRepository()
         viewmodel = ViewModelProvider(this, AuthViewModelFactory(repository)).get(ApiViewModel::class.java)
         misc=Misc(context = this)

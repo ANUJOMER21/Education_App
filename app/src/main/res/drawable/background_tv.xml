@@ -5,5 +5,5 @@
 
 </stroke>
     <corners
-        android:radius="20dp"/>
+        android:radius="30dp"/>
  </shape>

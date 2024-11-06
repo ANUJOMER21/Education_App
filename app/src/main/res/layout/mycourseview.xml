@@ -24,9 +24,9 @@
             android:layout_height="wrap_content"
 
 
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -38,9 +38,9 @@
                 <ImageView
                     android:id="@+id/course_image"
                     android:src="@drawable/book"
-                    android:layout_width="100dp"
-                    android:layout_height="130dp"
-                    android:scaleType="fitCenter" />
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:scaleType="fitXY" />
             </androidx.cardview.widget.CardView>
 
             <RelativeLayout
@@ -57,7 +57,7 @@
                     android:layout_above="@id/rl1"
 
                     android:layout_alignParentTop="true"
-                    android:gravity="center"
+
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_height="wrap_content">
@@ -79,6 +79,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:maxLines="2"
+                        android:layout_margin="10dp"
 
                         android:text="description\ndescription"
                         android:layout_marginStart="10dp"
@@ -89,11 +90,12 @@
                         android:id="@+id/description"
                         />
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
 
-                        android:layout_marginBottom="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         android:layout_height="wrap_content">
                         <LinearLayout
