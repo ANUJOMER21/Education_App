@@ -15,6 +15,7 @@ import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Fragment.HomeFragment
 import com.example.educationapp.Fragment.LiveFragment
+import com.example.educationapp.Fragment.MyLiveFragment
 import com.example.educationapp.Fragment.Mycourses
 import com.example.educationapp.Fragment.ReferEarn
 import com.example.educationapp.Fragment.profile
@@ -73,6 +74,13 @@ class HomePage : AppCompatActivity() {
 
 
                 LiveFragment()
+            }
+            R.id.nav_my_live_class->{
+                namell.visibility=LinearLayout.GONE
+                fragname.visibility=LinearLayout.VISIBLE
+                pagename.text="My Live Class"
+                search_cv.visibility=View.GONE
+                MyLiveFragment()
             }
             R.id.nav_refer->{
                 namell.visibility=LinearLayout.GONE

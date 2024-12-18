@@ -196,11 +196,12 @@ class TestRepository : RepositoryImpl {
     }
 
     override suspend fun get_live_class_details(
-        user_id: String,
-
+        course_id: String,
+        user_id: String
     ): Result<get_live_class_details> {
         TODO("Not yet implemented")
     }
+
 
     override suspend fun Purchase_live_class(
         phone: String,
@@ -242,6 +243,10 @@ class TestRepository : RepositoryImpl {
         course_id: String,
         rating: String
     ): Result<rate_res> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun myliveclass(phone: String): Result<get_live_class_details> {
         TODO("Not yet implemented")
     }
 

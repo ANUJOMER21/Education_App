@@ -1,6 +1,7 @@
 package com.example.educationapp.Activity
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class BuyLiveClass : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityBuyLiveClassBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Misc=Misc(this)
         val repository= MainRepository()
         viewModel = ViewModelProvider(this, AuthViewModelFactory(repository)).get(ApiViewModel::class.java)
         val uid=Misc.getid();
@@ -43,6 +45,7 @@ class BuyLiveClass : AppCompatActivity() {
         }
 
         val cid=intent.getStringExtra("id")
+        Log.d("BuyLiveClass_id",cid.toString())
         val title=intent.getStringExtra("title")
         val cost=intent.getStringExtra("cost")
         binding.coursename.text=title

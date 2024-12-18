@@ -135,11 +135,12 @@ class MainRepository : RepositoryImpl {
     }
 
     override suspend fun get_live_class_details(
-        phone: String,
+        course_id: String,user_id: String
+
 
     ): Result<get_live_class_details> {
         return safeApiCall {
-            apiService.get_live_class_details(phone)
+            apiService.get_live_class_details(course_id,user_id)
         }
     }
 
@@ -200,6 +201,13 @@ return safeApiCall {
             apiService.rate_course(user_id,course_id,rating)
         }
     }
+
+    override suspend fun myliveclass(phone: String): Result<get_live_class_details> {
+        return safeApiCall {
+            apiService.my_live_class(phone)
+        }
+    }
+
 
     private inline fun <T> safeApiCall(apiCall: () -> Response<T>): Result<T> {
         return try {

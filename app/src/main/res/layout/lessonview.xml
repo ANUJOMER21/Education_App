@@ -15,64 +15,54 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content">
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Subject name"
-       android:textAlignment="center"
-       android:fontFamily="@font/suse_bold"
-       android:layout_margin="10dp"
-       android:textColor="@color/black"
-       android:textSize="18sp"
-       android:textStyle="bold"
-       android:id="@+id/tv_subjectName"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:strokeColor="@color/gray"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
+      android:id="@+id/mcv1"
+
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/course_image"
+            android:src="@drawable/book"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY" />
+    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subject name"
+        android:textAlignment="center"
+        android:fontFamily="@font/suse_bold"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/tv_subjectName"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+
         android:background="@color/orange"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:id="@+id/rl_date"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/tv"
-            android:textSize="18sp"
-            android:fontFamily="@font/suse_bold"
-            android:text="Date &amp; time:"
-
-            android:textStyle="bold"
-            android:textColor="@color/black"
-
-            android:layout_centerVertical="true"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/tv_date"
-            android:layout_alignParentEnd="true"
-            android:fontFamily="@font/suse_regular"
-            android:textSize="18sp"
-            android:text="00/00/0000"
-
-            android:textColor="@color/black"
-
-            android:layout_centerVertical="true"
-            android:layout_height="wrap_content"/>
-    </RelativeLayout>
-
     <TextView
         android:id="@+id/message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/suse_bold"
         android:layout_margin="10dp"
-        android:text="Learn about Live Lesson Requests."
+        android:text="Number of Live Lesson Requests."
         android:textAlignment="center"
         android:textColor="@color/orange"
         android:textSize="16sp"

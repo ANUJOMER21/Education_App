@@ -1,6 +1,7 @@
 package com.example.educationapp.APi
 
 import android.util.Log
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -262,12 +263,26 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
         }
     }
 
-    fun fetchLiveClassDetails(phone: String) {
+    fun fetchLiveClassDetails(courseId: String,userid: String) {
         viewModelScope.launch {
-            val result = repository.get_live_class_details(phone)
+            val result = repository.get_live_class_details(courseId,userid)
             result.fold(
                 onSuccess = {
                     _liveClassDetailsState.value = it
+                },
+                onFailure = {
+                    Log.d("fetchLiveClassDetails",it.toString())
+                    _liveClassDetailsState.value = null
+                }
+            )
+        }
+    }
+    fun myLive_class(phone:String){
+        viewModelScope.launch {
+            val result=repository.myliveclass(phone)
+            result.fold(
+                onSuccess = {
+                    _liveClassDetailsState.value=it
                 },
                 onFailure = {
                     Log.d("fetchLiveClassDetails",it.toString())
@@ -361,6 +376,47 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
 
         }
     }
+    private val _liveclassCourseState = MutableLiveData<ArrayList<Course>>()
+    val liveclassCourseState: LiveData<ArrayList<Course>> = _liveclassCourseState
+
+    fun Liveclass_details(user_id: String) {
+        viewModelScope.launch {
+            getAllCourse() // Ensure this fetches `allCourseState` correctly.
+
+            // Observing `allCourseState` once and collecting the result
+            allCourseState.observeForever { courses ->
+                if (courses != null) {
+                    val newCourse = ArrayList<Course>()
+
+                    // Use `withContext` for repository calls (to ensure the correct dispatcher)
+                    viewModelScope.launch {
+                        courses.forEach { course ->
+                            val cid = course.courseId
+                            if (cid != null) {
+                                val result = repository.get_live_class_details(cid, user_id)
+                                result.fold(
+                                    onSuccess = { data ->
+                                        course.live_classs_no = data.data.size
+                                        if (course.live_classs_no!! > 0) {
+                                            newCourse.add(course)
+                                        }
+                                        Log.d("result", data.toString())
+                                    },
+                                    onFailure = { exception ->
+                                        Log.d("message", exception.toString())
+                                    }
+                                )
+                            }
+                        }
+                        // Update LiveData after processing all courses
+                        _liveclassCourseState.postValue(newCourse)
+                    }
+                }
+            }
+        }
+    }
+
+
 
 }
 

@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.educationapp.APi.Live_class_details
+import com.bumptech.glide.Glide
+import com.example.educationapp.APi.Course
 import com.example.educationapp.Activity.BuyLiveClass
+import com.example.educationapp.Activity.liveclass_page
 import com.example.educationapp.Activity.liveclassrequestpage
 import com.example.educationapp.R
 import com.example.educationapp.databinding.LessonviewBinding
 
-class LiveClassAdapter(val context: Context, val list: ArrayList<Live_class_details?>):RecyclerView.Adapter<LiveClassAdapter.VH>() {
+class LiveClassAdapter(val context: Context, val list: ArrayList<Course>):RecyclerView.Adapter<LiveClassAdapter.VH>() {
 class VH(val binding:LessonviewBinding):RecyclerView.ViewHolder(binding.root){
 
 }
@@ -23,42 +25,16 @@ class VH(val binding:LessonviewBinding):RecyclerView.ViewHolder(binding.root){
     }
 
     override fun onBindViewHolder(holder: LiveClassAdapter.VH, position: Int) {
-       holder.binding.tvSubjectName.text=list[position]?.classTitle
-        val status=list[position]?.status
-        holder.binding.message.text=list[position]?.status
-        if(status.equals("waiting for response")){
-            holder.binding.rlDate.visibility= View.GONE
+       val item=list[position]
+        Glide.with(context).load(item.imageUrl).into(holder.binding.courseImage)
+        holder.binding.tvSubjectName.text=item.courseName
+        holder.binding.message.text="${item.live_classs_no} Live Lesson Requests"
+        holder.binding.mcv1.setOnClickListener {
+            val intent=Intent(context,liveclass_page::class.java)
+            intent.putExtra("courseid",item.courseId.toString())
+            context.startActivity(intent)
 
-        }
-        else if(status.equals("payment pending")){
 
-
-            holder.binding.rlDate.visibility= View.GONE
-            holder.binding.payment.visibility=View.VISIBLE
-            holder.binding.payment.setOnClickListener {
-                val intent= Intent(context, BuyLiveClass::class.java)
-                intent.putExtra("id",list[position]?.liveclassId)
-                intent.putExtra("title",list[position]?.classTitle)
-                intent.putExtra("cost",list[position]?.price)
-                context.startActivity(intent)
-            }
-
-        }
-        else{
-            holder.binding.rlDate.visibility= View.VISIBLE
-            holder.binding.tvDate.text=list[position]?.startTime
-            holder.binding.liveclass.visibility=View.VISIBLE
-
-            holder.binding.liveclass.setOnClickListener {
-                val intent= Intent(context, liveclassrequestpage::class.java)
-                intent.putExtra("id",list[position]?.liveclassId)
-                intent.putExtra("title",list[position]?.classTitle)
-                intent.putExtra("softname",list[position]?.softwareName)
-                intent.putExtra("desc",list[position]?.classDescription)
-                intent.putExtra("meetlink",list[position]?.meetingLink)
-                intent.putExtra("starttime",list[position]?.startTime)
-                context.startActivity(intent)
-            }
         }
 
 

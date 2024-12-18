@@ -41,7 +41,10 @@ android {
 }
 
 dependencies {
-    implementation (libs.autoimageslider)
+//    implementation (libs.autoimageslider)
+
+
+        implementation ("com.github.dangiashish:Auto-Image-Slider:1.0.6")
 
 
         implementation (libs.auto.image.slider)

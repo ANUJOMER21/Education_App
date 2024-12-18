@@ -12,6 +12,7 @@ data class LoginResponse(val success:String,val id:Int)
                     @SerializedName("price"      ) var  price:String?=null,
                     @SerializedName("description") var description: String?=null,
                     @SerializedName("avg_rating") var avg_rating: String?=null,
+                    @SerializedName("liveclass_no") var live_classs_no:Int?=0,
                     @SerializedName("duration"   ) var duration   : String? = null):Serializable
 
  data class Category(
@@ -133,14 +134,15 @@ data class get_live_class_details(
 
 )
 data class Live_class_details(
-    @SerializedName("liveclass_id"      ) var liveclassId      : String? = null,
+    @SerializedName("live_class_id"      ) var liveclassId      : String? = null,
     @SerializedName("class_title"       ) var classTitle       : String? = null,
     @SerializedName("software_name"     ) var softwareName     : String? = null,
     @SerializedName("price"             ) var price            : String? = null,
     @SerializedName("class_description" ) var classDescription : String? = null,
     @SerializedName("meeting_link"      ) var meetingLink      : String? = null,
     @SerializedName("start_time"        ) var startTime        : String? = null,
-    @SerializedName("status"            ) var status           : String? = null
+    @SerializedName("status"            ) var status           : String? = null,
+    @SerializedName("message"           ) var message          : String? = null
 
 )
 

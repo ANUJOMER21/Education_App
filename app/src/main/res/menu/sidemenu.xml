@@ -13,6 +13,11 @@
         android:icon="@drawable/live_photo_svgrepo_com"
         android:title="Live Class" />
     <item
+        android:id="@+id/nav_my_live_class"
+        android:icon="@drawable/live_photo_svgrepo_com"
+        android:title="My Live Class"/>
+
+    <item
         android:id="@+id/nav_profile"
 android:icon="@drawable/profile_circle_svgrepo_com"
         android:title="Profile" />

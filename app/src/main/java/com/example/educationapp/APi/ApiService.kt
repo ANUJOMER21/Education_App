@@ -52,7 +52,7 @@ interface ApiService {
 
     @POST("get_live_class_details.php")
     @FormUrlEncoded
-    suspend fun get_live_class_details(@Field("phone") phone: String):Response<get_live_class_details>
+    suspend fun get_live_class_details(@Field("course_id") course_id: String,@Field("user_id")user_id: String):Response<get_live_class_details>
 
     @POST("Purchase_live_class.php")
     @FormUrlEncoded
@@ -76,6 +76,9 @@ interface ApiService {
  @POST("rate_course.php")
     @FormUrlEncoded
     suspend fun rate_course(@Field("user_id") user_id: String,@Field("course_id") course_id: String,@Field("rating") rating: String):Response<rate_res>
+@POST("my_live_class.php")
+@FormUrlEncoded
+suspend fun my_live_class(@Field("phone") user_id: String):Response<get_live_class_details>
 
 }
  const val BASE_URL = "https://works.diginspire.in/EducationalSite/api/"
