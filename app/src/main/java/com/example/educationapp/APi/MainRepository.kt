@@ -208,6 +208,12 @@ return safeApiCall {
         }
     }
 
+    override suspend fun helpsupport(id: String, message: String): Result<success_response> {
+        return safeApiCall {
+            apiService.helpsupport(id,message)
+        }
+    }
+
 
     private inline fun <T> safeApiCall(apiCall: () -> Response<T>): Result<T> {
         return try {

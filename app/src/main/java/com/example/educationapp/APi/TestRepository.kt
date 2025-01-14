@@ -250,6 +250,10 @@ class TestRepository : RepositoryImpl {
         TODO("Not yet implemented")
     }
 
+    override suspend fun helpsupport(id: String, message: String): Result<success_response> {
+        TODO("Not yet implemented")
+    }
+
 
     val image="https://img.freepik.com/free-psd/geek-pride-day-banner-theme_23-2148559505.jpg?w=1800&t=st=1724172032~exp=1724172632~hmac=78e00ad993163f42b41048ee79bb80a563138c55ceed5dfe4ab88e6567eb0e21"
     val cat=image

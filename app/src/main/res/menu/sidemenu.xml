@@ -21,6 +21,9 @@
         android:id="@+id/nav_profile"
 android:icon="@drawable/profile_circle_svgrepo_com"
         android:title="Profile" />
+    <item android:id="@+id/nav_help"
+        android:icon="@drawable/support_svgrepo_com"
+        android:title="Help &amp; Support"/>
     <item
         android:id="@+id/nav_refer"
 android:icon="@drawable/cashback_ui_web_svgrepo_com"

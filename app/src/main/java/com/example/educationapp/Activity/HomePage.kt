@@ -17,6 +17,7 @@ import com.example.educationapp.Fragment.HomeFragment
 import com.example.educationapp.Fragment.LiveFragment
 import com.example.educationapp.Fragment.MyLiveFragment
 import com.example.educationapp.Fragment.Mycourses
+import com.example.educationapp.Fragment.Help_and_support
 import com.example.educationapp.Fragment.ReferEarn
 import com.example.educationapp.Fragment.profile
 import com.example.educationapp.Misc
@@ -81,6 +82,14 @@ class HomePage : AppCompatActivity() {
                 pagename.text="My Live Class"
                 search_cv.visibility=View.GONE
                 MyLiveFragment()
+            }
+            R.id.nav_help->{
+                namell.visibility=LinearLayout.GONE
+                fragname.visibility=LinearLayout.VISIBLE
+                pagename.text="Help & Support"
+                search_cv.visibility=View.GONE
+                Help_and_support()
+
             }
             R.id.nav_refer->{
                 namell.visibility=LinearLayout.GONE

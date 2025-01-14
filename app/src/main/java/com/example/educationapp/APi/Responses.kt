@@ -60,6 +60,8 @@ data class disc_success_response(
 )
 data class success_response(
     @SerializedName("success" ) var success : String? = null,
+    @SerializedName("success" ) var success_bol : Boolean? = null,
+
 
     @SerializedName("status") var status : String? = null,
     @SerializedName("message" ) var message : String? = null,

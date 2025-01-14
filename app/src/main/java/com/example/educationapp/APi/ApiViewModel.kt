@@ -131,6 +131,8 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
 
     private val _liveClassRequestState = MutableLiveData<success_response?>()
     val liveClassRequestState: LiveData<success_response?> = _liveClassRequestState
+    private val _helpRequestState = MutableLiveData<success_response?>()
+    val helpRequestState: LiveData<success_response?> = _helpRequestState
 
     private val _liveClassDetailsState = MutableLiveData<get_live_class_details?>()
     val liveClassDetailsState: LiveData<get_live_class_details?> = _liveClassDetailsState
@@ -413,6 +415,17 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
                     }
                 }
             }
+        }
+    }
+
+
+    fun helpandsupport(user_id: String,message:String){
+        viewModelScope.launch {
+            val result=repository.helpsupport(user_id,message)
+            result.fold(
+                onSuccess = {_helpRequestState.value=it},
+                onFailure = {_helpRequestState.value=null}
+            )
         }
     }
 

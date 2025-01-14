@@ -79,6 +79,9 @@ interface ApiService {
 @POST("my_live_class.php")
 @FormUrlEncoded
 suspend fun my_live_class(@Field("phone") user_id: String):Response<get_live_class_details>
+    @POST("message.php")
+    @FormUrlEncoded
+    suspend fun helpsupport(@Field("user_id")user_id: String,@Field("message")message:String):Response<success_response>
 
 }
  const val BASE_URL = "https://works.diginspire.in/EducationalSite/api/"
