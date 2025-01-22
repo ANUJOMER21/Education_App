@@ -1,5 +1,8 @@
 package com.example.educationapp.Activity
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -55,22 +58,42 @@ class BuyLiveClass : AppCompatActivity() {
             finish()
         }
         binding.totalfee.text="Rs. "+cost
+        viewModel.liveClassRequestState.observe(this){
+            if(it!=null){
+                Toast.makeText(this,it.message,Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            else{
+                Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show()
+            }
+        }
         binding.buynow.setOnClickListener {
-           viewModel.purchaseLiveClass(
+
+            val message = "Hello sir, I am interested in the live class of id ${cid}. I would like to enroll in it for $cost rupees. Please process my request. My registered phone number is $phone."
+            sendMessageViaWhatsApp("9817320179", message, this)
+          /* viewModel.purchaseLiveClass(
                phone,
                cid.toString(),
                cost.toString()
-           )
-            viewModel.liveClassRequestState.observe(this){
-                if(it!=null){
-                    Toast.makeText(this,it.message,Toast.LENGTH_SHORT).show()
-                    finish()
-                }
-                else{
-                    Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show()
-                }
-            }
+           )*/
+
         }
 
+    }
+    fun sendMessageViaWhatsApp(phoneNumber: String, message: String, context: Context) {
+        try {
+            // Format phone number with country code, e.g., "1234567890" -> "+1234567890"
+            val formattedNumber = if (phoneNumber.startsWith("+")) phoneNumber else "+$phoneNumber"
+
+            // Create the intent to send the message
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://wa.me/$formattedNumber?text=${Uri.encode(message)}")
+
+            // Start the WhatsApp activity
+            context.startActivity(intent)
+        } catch (e: Exception) {
+            // Show an error if WhatsApp is not installed
+            Toast.makeText(context, "WhatsApp not installed", Toast.LENGTH_SHORT).show()
+        }
     }
 }

@@ -1,5 +1,8 @@
 package com.example.educationapp.Activity
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -100,9 +103,31 @@ class BuyPage : AppCompatActivity() {
                 }
             }
         }
+        val mobilenumber="9817320179"
         binding.buynow.setOnClickListener{
-            viewModel.purchaseCourse(phone,course!!.courseId!!,price.toString())
+            val message = "Hello sir, I am interested in the course ${course?.courseName}. I would like to purchase it for $price rupees. Please process my request. My registered phone number is $phone."
+            sendMessageViaWhatsApp(mobilenumber, message, this)
+
+            //  viewModel.purchaseCourse(phone,course!!.courseId!!,price.toString())
         }
 
     }
+
+    fun sendMessageViaWhatsApp(phoneNumber: String, message: String, context: Context) {
+        try {
+            // Format phone number with country code, e.g., "1234567890" -> "+1234567890"
+            val formattedNumber = if (phoneNumber.startsWith("+")) phoneNumber else "+$phoneNumber"
+
+            // Create the intent to send the message
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://wa.me/$formattedNumber?text=${Uri.encode(message)}")
+
+            // Start the WhatsApp activity
+            context.startActivity(intent)
+        } catch (e: Exception) {
+            // Show an error if WhatsApp is not installed
+            Toast.makeText(context, "WhatsApp not installed", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }
