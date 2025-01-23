@@ -84,7 +84,7 @@ suspend fun my_live_class(@Field("phone") user_id: String):Response<get_live_cla
     suspend fun helpsupport(@Field("user_id")user_id: String,@Field("message")message:String):Response<success_response>
 
 }
- const val BASE_URL = "https://lifelearningedu.in/api/"
+ const val BASE_URL ="https://lifelearningeducation.in/api/"
 
 
 // Retrofit Instance
