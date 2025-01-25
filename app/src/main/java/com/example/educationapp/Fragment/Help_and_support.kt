@@ -1,6 +1,7 @@
 package com.example.educationapp.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -52,17 +53,19 @@ class Help_and_support : Fragment() {
         val uid = misc.getid()
         viewmodel.helpRequestState.observe(viewLifecycleOwner){
             if(it!=null){
-                if(it.success_bol==true){
+                if(it.success==true){
                     binding.etQuery.setText("")
                     Toast.makeText(requireActivity(),"We will contact you soon, Thank you",Toast.LENGTH_SHORT).show()
                 }
 
             }
+
         }
         binding.btnSend.setOnClickListener {
 
             val helpet=binding.etQuery.text.toString()
             if(helpet.isNotEmpty()){
+                Log.d("APICALL",helpet)
                 viewmodel.helpandsupport(uid.toString(),helpet)
             }
             else{

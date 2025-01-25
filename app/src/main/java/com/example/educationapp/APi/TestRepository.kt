@@ -250,7 +250,7 @@ class TestRepository : RepositoryImpl {
         TODO("Not yet implemented")
     }
 
-    override suspend fun helpsupport(id: String, message: String): Result<success_response> {
+    override suspend fun helpsupport(id: String, message: String): Result<help_supp> {
         TODO("Not yet implemented")
     }
 

@@ -67,6 +67,10 @@ data class success_response(
     @SerializedName("message" ) var message : String? = null,
     @SerializedName("discounted_price" ) var discounted_price : String? = null,
 )
+data class help_supp(
+    @SerializedName("success" ) var success : Boolean? = null,
+    @SerializedName("id"      ) var id      : Int?     = null
+)
 data class rate_res(
     @SerializedName("success" ) var success : Boolean? = null,
     @SerializedName("message" ) var message : String?  = null

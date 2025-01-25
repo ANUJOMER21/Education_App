@@ -208,9 +208,9 @@ return safeApiCall {
         }
     }
 
-    override suspend fun helpsupport(id: String, message: String): Result<success_response> {
+    override suspend fun helpsupport(id: String, message: String): Result<help_supp> {
         return safeApiCall {
-            apiService.helpsupport(id,message)
+            apiService.helpsupport(help_request(id,message))
         }
     }
 

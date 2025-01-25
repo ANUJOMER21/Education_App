@@ -137,88 +137,93 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:background="?attr/selectableItemBackground">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/about_svgrepo_com"/>
+                android:src="@drawable/about_svgrepo_com" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/suse_regular"
                 android:text="About App"
-                android:fontFamily="@font/suse_regular"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/right_arrow_svgrepo_com"/>
+                android:src="@drawable/right_arrow_svgrepo_com" />
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/tc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:background="?attr/selectableItemBackground">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/license_svgrepo_com"/>
+                android:src="@drawable/license_svgrepo_com" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/suse_regular"
                 android:text="Terms &amp; Conditions"
-                android:fontFamily="@font/suse_regular"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/right_arrow_svgrepo_com"/>
+                android:src="@drawable/right_arrow_svgrepo_com" />
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/policy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:background="?attr/selectableItemBackground">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/privacy_tips_svgrepo_com"/>
+                android:src="@drawable/privacy_tips_svgrepo_com" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Privacy Policy"
                 android:fontFamily="@font/suse_regular"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                android:text="Privacy Policy"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/right_arrow_svgrepo_com"/>
+                android:src="@drawable/right_arrow_svgrepo_com" />
         </LinearLayout>
 
         <!-- Similar items for Terms & Conditions, Privacy Policy, Share This App -->

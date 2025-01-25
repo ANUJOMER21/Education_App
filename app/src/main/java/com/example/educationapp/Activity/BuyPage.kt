@@ -103,7 +103,7 @@ class BuyPage : AppCompatActivity() {
                 }
             }
         }
-        val mobilenumber="9817320179"
+        val mobilenumber="9991329616"
         binding.buynow.setOnClickListener{
             val message = "Hello sir, I am interested in the course ${course?.courseName}. I would like to purchase it for $price rupees. Please process my request. My registered phone number is $phone."
             sendMessageViaWhatsApp(mobilenumber, message, this)

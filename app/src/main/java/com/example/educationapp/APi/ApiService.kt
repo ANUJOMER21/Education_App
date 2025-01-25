@@ -73,15 +73,14 @@ interface ApiService {
     @POST("purchased_course.php")
     @FormUrlEncoded
     suspend fun is_course_purchased(@Field("phone") phone: String,@Field("course_id") course_id: String):Response<is_course_purchased>
- @POST("rate_course.php")
+    @POST("rate_course.php")
     @FormUrlEncoded
     suspend fun rate_course(@Field("user_id") user_id: String,@Field("course_id") course_id: String,@Field("rating") rating: String):Response<rate_res>
-@POST("my_live_class.php")
+    @POST("my_live_class.php")
 @FormUrlEncoded
 suspend fun my_live_class(@Field("phone") user_id: String):Response<get_live_class_details>
     @POST("message.php")
-    @FormUrlEncoded
-    suspend fun helpsupport(@Field("user_id")user_id: String,@Field("message")message:String):Response<success_response>
+    suspend fun helpsupport(@Body help:help_request):Response<help_supp>
 
 }
  const val BASE_URL ="https://lifelearningeducation.in/api/"

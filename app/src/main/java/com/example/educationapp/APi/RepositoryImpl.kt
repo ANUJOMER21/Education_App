@@ -27,6 +27,6 @@ interface RepositoryImpl {
     suspend fun is_course_purchased(phone: String,course_id: String):Result<is_course_purchased>
     suspend fun  rate_course(user_id: String,course_id: String,rating: String):Result<rate_res>
     suspend fun myliveclass(phone: String):Result<get_live_class_details>
-    suspend fun helpsupport(id:String,message:String):Result<success_response>
+    suspend fun helpsupport(id:String,message:String):Result<help_supp>
 
 }

@@ -70,7 +70,7 @@ class BuyLiveClass : AppCompatActivity() {
         binding.buynow.setOnClickListener {
 
             val message = "Hello sir, I am interested in the live class of id ${cid}. I would like to enroll in it for $cost rupees. Please process my request. My registered phone number is $phone."
-            sendMessageViaWhatsApp("9817320179", message, this)
+            sendMessageViaWhatsApp("9991329616", message, this)
           /* viewModel.purchaseLiveClass(
                phone,
                cid.toString(),

@@ -10,3 +10,7 @@ data class SignupRequst( @SerializedName("username"        ) var username       
                          @SerializedName("referralCode"    ) var referralCode   : String? = null,
                          @SerializedName("secondary_phone" ) var secondaryPhone : String? = null)
 data class USERID( @SerializedName("userid" ) var userid : String? = null)
+
+
+data class help_request( @SerializedName("user_id" ) var user_id : String? = null,
+                         @SerializedName("message" ) var message : String? = null)

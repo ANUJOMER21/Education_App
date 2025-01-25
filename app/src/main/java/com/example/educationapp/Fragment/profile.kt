@@ -11,6 +11,7 @@ import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Activity.ProfileSettingPage
+import com.example.educationapp.Activity.Support_page
 import com.example.educationapp.Activity.changepassword
 import com.example.educationapp.Misc
 import com.example.educationapp.R
@@ -67,6 +68,23 @@ class profile : Fragment() {
                 binding.profileEmail.text = it.profile?.email
             }
         }
+
+        binding.tc.setOnClickListener {
+            val intent= Intent(requireContext(),Support_page::class.java)
+            intent.putExtra("page_type","tc")
+            startActivity(intent)
+        }
+        binding.policy.setOnClickListener {
+            val intent= Intent(requireContext(),Support_page::class.java)
+            intent.putExtra("page_type","policy")
+            startActivity(intent)
+        }
+        binding.about.setOnClickListener {
+            val intent= Intent(requireContext(),Support_page::class.java)
+            intent.putExtra("page_type","about")
+            startActivity(intent)
+        }
+
 
 
 
