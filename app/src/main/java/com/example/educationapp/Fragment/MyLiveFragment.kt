@@ -68,7 +68,7 @@ class MyLiveFragment : Fragment() {
                         val liveClassDetails = liveClassDetailsState.data
                         Log.d("liveClassDetails", liveClassDetails.toString())
                         val adapter = CourseLiveClassAdapter(requireContext(), liveClassDetails)
-                     rv.adapter = adapter
+                        rv.adapter = adapter
                         adapter.notifyDataSetChanged()
                     }
                 }
