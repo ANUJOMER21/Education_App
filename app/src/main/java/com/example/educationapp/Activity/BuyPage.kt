@@ -92,7 +92,7 @@ class BuyPage : AppCompatActivity() {
                 Toast.makeText(this@BuyPage,"Something went wrong",Toast.LENGTH_SHORT).show()
             }
             else{
-                if(it.success.equals("true")){
+                if(it.success_bol==true){
                     Toast.makeText(this,it.message,Toast.LENGTH_SHORT).show()
                  finish()
 
@@ -106,9 +106,9 @@ class BuyPage : AppCompatActivity() {
         val mobilenumber="+919991329616"
         binding.buynow.setOnClickListener{
             val message = "Hello sir, I am interested in the course ${course?.courseName}. I would like to purchase it for $price rupees. Please process my request. My registered phone number is $phone."
-            sendMessageViaWhatsApp(mobilenumber, message, this)
+            //sendMessageViaWhatsApp(mobilenumber, message, this)
 
-            //  viewModel.purchaseCourse(phone,course!!.courseId!!,price.toString())
+              viewModel.purchaseCourse(phone,course!!.courseId!!,price.toString())
         }
 
     }

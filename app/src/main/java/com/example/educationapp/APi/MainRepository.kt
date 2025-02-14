@@ -96,7 +96,7 @@ class MainRepository : RepositoryImpl {
         phone: String,
         courseid: String,
         price: String
-    ): Result<success_response> {
+    ): Result<success_repponse_purchase> {
       return  safeApiCall {
           Log.d("Purchase","$phone $courseid, $price")
           apiService.purchase(phone,price,courseid)

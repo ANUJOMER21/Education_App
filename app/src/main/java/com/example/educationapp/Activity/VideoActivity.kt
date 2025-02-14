@@ -1,6 +1,7 @@
 package com.example.educationapp.Activity
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,9 @@ class VideoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding= ActivityVideoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val videoUrl=intent.getStringExtra("videourl")
+        var videoUrl=intent.getStringExtra("videourl")
+        Log.d("VIDEO URL",videoUrl.toString())
+       // videoUrl="https://api.dyntube.com/v1/apps/hls/PD2RDNwkgkee0yWGORdbLQ.m3u8"
         binding.videoView.setSource(videoUrl!!)
         binding.videoView.setScreenMode(EnumScreenMode.FULLSCREEN)
 

@@ -118,8 +118,8 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
     private val _discountState = MutableLiveData<disc_success_response?>()
     val discountState: LiveData<disc_success_response?> = _discountState
 
-    private val _purchaseState = MutableLiveData<success_response?>()
-    val purchaseState: LiveData<success_response?> = _purchaseState
+    private val _purchaseState = MutableLiveData<success_repponse_purchase?>()
+    val purchaseState: LiveData<success_repponse_purchase?> = _purchaseState
 
     private val _myCourseState = MutableLiveData<MyCourse?>()
     val myCourseState: LiveData<MyCourse?> = _myCourseState
@@ -146,6 +146,7 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
                     _profileState.value = it
                 },
                 onFailure = {
+                    Log.d("Failure",it.toString())
                     _profileState.value = null
                 }
             )
@@ -203,6 +204,7 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
                     _purchaseState.value = it
                 },
                 onFailure = {
+                    Log.d("failure",it.toString())
                     _purchaseState.value = null
                 }
             )

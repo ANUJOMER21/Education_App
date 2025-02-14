@@ -127,7 +127,7 @@ class HomeFragment : Fragment() {
         val autoImageSlider=binding.autoImageSlider
 
         viewModel.sliderState.observe(viewLifecycleOwner){
-            Log.d("autoImageslideder",it.get(0).imgUrl.toString())
+            Log.d("autoImageslideder",it.get(0)?.imgUrl.toString())
             autoImageSlider.setImageList(it, ImageScaleType.FIT)
         }
         autoImageSlider.setDefaultAnimation()

@@ -168,7 +168,7 @@ class TestRepository : RepositoryImpl {
         phone: String,
         courseid: String,
         price: String
-    ): Result<success_response> {
+    ): Result<success_repponse_purchase> {
         TODO("Not yet implemented")
     }
 

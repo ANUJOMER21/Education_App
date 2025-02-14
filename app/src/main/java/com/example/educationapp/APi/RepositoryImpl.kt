@@ -13,7 +13,7 @@ interface RepositoryImpl {
     suspend fun getCourseCategoryWise(categoryId:String):Result<ArrayList<Course>>
     suspend fun updateprofile(profile: UpdateProfileRequest):Result<success_response>
     suspend fun discount(courseid:String,copon:String):Result<disc_success_response>
-    suspend fun Purchase(phone: String,courseid: String,price:String):Result<success_response>
+    suspend fun Purchase(phone: String,courseid: String,price:String):Result<success_repponse_purchase>
     suspend fun my_course(phone: String):Result<MyCourse>
     suspend fun my_course_content(course_id:String):Result<CourseContent>
     suspend fun course_progress(user_id: String,course_id: String,video_id:String):Result<course_progress>

@@ -37,7 +37,7 @@ interface ApiService {
     suspend fun discount(@Field("course_id") courseId: String, @Field("coupon_code") coupon: String):Response<disc_success_response>
     @POST("Purchase.php")
     @FormUrlEncoded
-    suspend fun purchase(@Field("phone") phone:String,@Field("cost") price:String,@Field("course_id") course_id:String):Response<success_response>
+    suspend fun purchase(@Field("phone") phone:String,@Field("cost") price:String,@Field("course_id") course_id:String):Response<success_repponse_purchase>
     @POST("my_course.php")
     @FormUrlEncoded
     suspend fun my_course(@Field("phone") phone:String):Response<MyCourse>

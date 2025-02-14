@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.educationapp.APi.CourseContentData
 import com.example.educationapp.R
+import com.google.android.exoplayer2.util.Log
 
 class lessonadadapter(var data    : ArrayList<CourseContentData>,val context: Context,val type:Int,val runlesson:(lessonid:String)->Unit):RecyclerView.Adapter<lessonadadapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): lessonadadapter.ViewHolder {
@@ -26,6 +27,7 @@ class lessonadadapter(var data    : ArrayList<CourseContentData>,val context: Co
                 Toast.makeText(context,"Please buy course",Toast.LENGTH_SHORT).show()
             }
             else{
+                Log.d("lessonid",item!!.toString())
                 runlesson(item.videoFileName!!)
             }
 

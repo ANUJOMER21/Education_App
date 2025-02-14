@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Video</title>
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding-top: 57.25%; /* Aspect ratio */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="video-container">
+    <iframe allow="autoplay; fullscreen"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+            src="https://player.dyntube.com/iframes/qPiEAsyhRkTPwRkaQNNGg"
+            title="Embedded Video">
+    </iframe>
+</div>
+<script src="https://embed.dyntube.com/v2/player/player.js"></script>
+</body>
+</html>
