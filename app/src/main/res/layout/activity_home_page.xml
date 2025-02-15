@@ -148,7 +148,7 @@ android:layout_centerVertical="true"
                      android:textSize="18sp"
                    android:layout_margin="10dp"
 
-                 android:textColorHint="#CCCCCC"
+                 android:textColorHint="#FFFFFF"
 
                      android:hint="What do you want to learn?"/>
 

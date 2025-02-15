@@ -38,6 +38,6 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         tools:listitem="@layout/live_request_view"
-        android:layout_margin="10dp"
+
         android:id="@+id/rlv1"/>
    </RelativeLayout>

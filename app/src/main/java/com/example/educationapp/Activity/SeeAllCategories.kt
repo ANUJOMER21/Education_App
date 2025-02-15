@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
@@ -36,7 +37,7 @@ class SeeAllCategories : AppCompatActivity() {
 
     private fun setCategory() {
         val categoryRecyclerView=binding.crv
-        categoryRecyclerView.layoutManager= LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        categoryRecyclerView.layoutManager= GridLayoutManager(this,3)
         viewModel.getAllCategory()
         viewModel.allCategoryState.observe(this){
             val adapter= CategoryAdapter2(this,it)

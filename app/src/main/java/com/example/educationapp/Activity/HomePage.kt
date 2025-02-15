@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -172,6 +173,7 @@ class HomePage : AppCompatActivity() {
 
 
        binding.notify.setOnClickListener {
+           search_cv.visibility=View.GONE
           supportFragmentManager.beginTransaction().replace(R.id.content_frame,profile()).commit()
                  }
         binding.searchCard.setOnClickListener{
@@ -179,4 +181,16 @@ class HomePage : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    private var backPressedTime: Long = 0
+    private val doubleBackTimeLimit: Long = 2000 // 2 seconds
+
+    override fun onBackPressed() {
+        if (backPressedTime + doubleBackTimeLimit > System.currentTimeMillis()) {
+            super.onBackPressed()
+        } else {
+            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show()
+        }
+        backPressedTime = System.currentTimeMillis()
+    }
+
 }

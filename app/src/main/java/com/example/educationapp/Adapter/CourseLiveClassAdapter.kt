@@ -41,12 +41,13 @@ class CourseLiveClassAdapter(val context: Context, val list: ArrayList<Live_clas
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         val item=list[position]
-        holder.binding.status.text=item?.status
-        holder.binding.Status.text=item?.classTitle
+        Log.d("item_live",item.toString())
+    //    holder.binding.status.text=item?.status
+        holder.binding.status.text=item?.classTitle?:item?.status
         val description=item?.classDescription?:item?.message
         holder.binding.desc.text=description
-        holder.binding.Status.visibility=if(item?.classTitle.isNullOrEmpty()) View.GONE else View.VISIBLE
-Log.d("courseLiveClass",item!!.liveclassId.toString())
+     //   holder.binding.status.visibility=if(item?.classTitle.isNullOrEmpty()) View.GONE else View.VISIBLE
+        Log.d("courseLiveClass",item!!.liveclassId.toString())
         if(item?.status.equals("payment pending")){
             holder.binding.amtll.visibility= View.VISIBLE
             holder.binding.classscheduled.visibility=View.GONE

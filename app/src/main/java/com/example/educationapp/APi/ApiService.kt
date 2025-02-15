@@ -48,7 +48,7 @@ interface ApiService {
     suspend fun course_progress(@Body user_id:String,course_id:String,video_id:String):Response<course_progress>
     @POST("request_live_class.php")
     @FormUrlEncoded
-    suspend fun request_live_class(@Field("user_id") user_id:String,@Field("course_id")course_id:String):Response<success_response>
+    suspend fun request_live_class(@Field("user_id") user_id:String,@Field("course_id")course_id:String):Response<success_response_Liveclass>
 
     @POST("get_live_class_details.php")
     @FormUrlEncoded
@@ -56,7 +56,7 @@ interface ApiService {
 
     @POST("Purchase_live_class.php")
     @FormUrlEncoded
-    suspend fun purchase_live_class(@Field("phone") phone: String,@Field("liveclass_id") course_id: String,@Field("cost") price: String):Response<success_response>
+    suspend fun purchase_live_class(@Field("phone") phone: String,@Field("liveclass_id") course_id: String,@Field("cost") price: String):Response<success_response_Liveclass>
 
     @POST("changepassword.php")
     @FormUrlEncoded

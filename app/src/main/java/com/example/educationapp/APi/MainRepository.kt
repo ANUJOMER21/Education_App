@@ -128,7 +128,7 @@ class MainRepository : RepositoryImpl {
     override suspend fun request_live_class(
         user_id: String,
         course_id: String
-    ): Result<success_response> {
+    ): Result<success_response_Liveclass> {
         return safeApiCall {
             apiService.request_live_class(user_id, course_id)
         }
@@ -148,7 +148,7 @@ class MainRepository : RepositoryImpl {
         phone: String,
         live_id: String,
         price: String
-    ): Result<success_response> {
+    ): Result<success_response_Liveclass> {
         return safeApiCall {
             apiService.purchase_live_class(phone,live_id,price)
         }

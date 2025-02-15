@@ -67,6 +67,10 @@ data class success_response(
     @SerializedName("message" ) var message : String? = null,
     @SerializedName("discounted_price" ) var discounted_price : String? = null,
 )
+data class success_response_Liveclass(
+    @SerializedName("status" ) var status : String? = null,
+    @SerializedName("message" ) var message : String? = null,
+)
 data class success_repponse_purchase(
     @SerializedName("success" ) var success_bol : Boolean? = null,
     @SerializedName("message" ) var message : String? = null,
@@ -116,7 +120,7 @@ data class CourseContent(
     @SerializedName("data"    ) var data    : ArrayList<CourseContentData> = arrayListOf()
 )
 data class CourseContentData(
-    @SerializedName("video_page_url"   ) var videoFileName    : String? = null,
+    @SerializedName("video_url"   ) var videoFileName    : String? = null,
     @SerializedName("video_title"       ) var videoTitle       : String? = null,
     @SerializedName("video_description" ) var videoDescription : String? = null
 

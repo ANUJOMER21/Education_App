@@ -191,7 +191,7 @@ class TestRepository : RepositoryImpl {
     override suspend fun request_live_class(
         user_id: String,
         course_id: String
-    ): Result<success_response> {
+    ): Result<success_response_Liveclass> {
         TODO("Not yet implemented")
     }
 
@@ -207,7 +207,7 @@ class TestRepository : RepositoryImpl {
         phone: String,
         live_id: String,
         price: String
-    ): Result<success_response> {
+    ): Result<success_response_Liveclass> {
         TODO("Not yet implemented")
     }
 

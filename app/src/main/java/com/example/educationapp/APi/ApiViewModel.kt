@@ -130,8 +130,8 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
     private val _courseProgressState = MutableLiveData<course_progress?>()
     val courseProgressState: LiveData<course_progress?> = _courseProgressState
 
-    private val _liveClassRequestState = MutableLiveData<success_response?>()
-    val liveClassRequestState: LiveData<success_response?> = _liveClassRequestState
+    private val _liveClassRequestState = MutableLiveData<success_response_Liveclass?>()
+    val liveClassRequestState: LiveData<success_response_Liveclass?> = _liveClassRequestState
     private val _helpRequestState = MutableLiveData<help_supp?>()
     val helpRequestState: LiveData<help_supp?> = _helpRequestState
 

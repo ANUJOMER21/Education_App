@@ -17,9 +17,9 @@ interface RepositoryImpl {
     suspend fun my_course(phone: String):Result<MyCourse>
     suspend fun my_course_content(course_id:String):Result<CourseContent>
     suspend fun course_progress(user_id: String,course_id: String,video_id:String):Result<course_progress>
-    suspend fun request_live_class(user_id: String,course_id: String):Result<success_response>
+    suspend fun request_live_class(user_id: String,course_id: String):Result<success_response_Liveclass>
     suspend fun get_live_class_details(course_id: String,user_id: String):Result<get_live_class_details>
-    suspend fun Purchase_live_class(phone: String,live_id: String,price: String):Result<success_response>
+    suspend fun Purchase_live_class(phone: String,live_id: String,price: String):Result<success_response_Liveclass>
     suspend fun changepass(user_id: String,newpass:String,oldpass:String):Result<success_response>
     suspend fun fetch_wallet(phone: String):Result<Fetch_Wallet>
     suspend fun withdraw(phone: String,amount: String,upiid:String):Result<withdraw>

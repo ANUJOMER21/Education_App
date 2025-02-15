@@ -1,174 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="0dp"
+    android:background="#E8EBFD">
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_centerInParent="true"
-        app:strokeColor="#E4E4E4"
-        android:layout_margin="10dp"
-        android:elevation="20dp"
-        android:backgroundTint="#DCE8FB"
         android:layout_height="wrap_content"
-        >
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:strokeColor="#E4E4E4"
+        app:strokeWidth="1dp"
+        android:backgroundTint="@color/white">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
+            <!-- Status Section -->
             <TextView
                 android:id="@+id/status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:text="Status"
                 android:textAlignment="center"
+
+                android:layout_marginBottom="10dp"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="5dp"
-                android:background="@color/orange"/>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/Status"
-                    android:layout_centerInParent="true"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="class name"
-
-                    android:textColor="@color/black"
-
-                    android:layout_centerVertical="true"
-                    android:layout_height="wrap_content"/>
-            </RelativeLayout>
+                android:layout_marginBottom="0dp"
+                android:background="@color/orange" />
 
 
 
+            <!-- Description -->
             <TextView
+                android:id="@+id/desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginVertical="8dp"
                 android:background="@drawable/background_tv"
-                android:padding="10dp"
+                android:padding="12dp"
+                android:text="Description"
                 android:textAlignment="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="5dp"
-                android:text="description"
-                android:textSize="14sp"
                 android:textColor="@color/black"
-
-                android:layout_marginBottom="10dp"
-                android:id="@+id/desc"/>
-
-
-
-
-
+                android:textSize="14sp"
+                android:layout_marginBottom="10dp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/orange"/>
+                android:background="@color/orange"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Class Scheduled Section -->
             <LinearLayout
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="wrap_content"
                 android:id="@+id/classscheduled"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:padding="8dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Link"
+                    android:text="Live Lesson Link"
                     android:textAlignment="center"
                     android:textSize="16sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    />
+                    android:paddingBottom="6dp" />
+
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="4dp">
+
                     <TextView
                         android:layout_width="wrap_content"
-
-                        android:textSize="16sp"
+                        android:layout_height="wrap_content"
                         android:text="Time:"
-
-                        android:textStyle="bold"
                         android:textColor="@color/black"
-
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:id="@+id/tv_time"
-                        android:layout_alignParentEnd="true"
                         android:textSize="16sp"
-                        android:text="12:00 am"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="12:00 AM"
                         android:textColor="@color/black"
-
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="16sp" />
                 </RelativeLayout>
+
                 <TextView
                     android:id="@+id/meetlink"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Learn about Live Lesson Requests"
+                    android:text="Join Live Lesson"
                     android:autoLink="web"
-                    android:textColor="#2962FF"
+                    android:textColor="@color/blue"
                     android:textAlignment="center"
                     android:textSize="16sp"
-                    android:layout_marginTop="5dp"
-
-                    />
-
+                    android:textStyle="bold"
+                    android:padding="8dp" />
             </LinearLayout>
 
+            <!-- Amount Section -->
             <LinearLayout
-                android:visibility="gone"
                 android:id="@+id/amtll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp">
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
-
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-
                         android:text="Amount:"
                         android:textColor="@color/black"
-
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -177,12 +147,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-
-                        android:text="Rs.0"
-
+                        android:text="Rs. 0"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </RelativeLayout>
 
                 <com.google.android.material.button.MaterialButton
@@ -191,11 +159,12 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/orange"
-                    android:text="Pay Amount" />
+                    android:text="Pay Amount"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp" />
             </LinearLayout>
 
         </LinearLayout>
-
 
     </com.google.android.material.card.MaterialCardView>
 
