@@ -86,9 +86,9 @@ class MainRepository : RepositoryImpl {
 
     }
 
-    override suspend fun discount(courseid: String, copon: String): Result<disc_success_response> {
+    override suspend fun discount(courseid: String, copon: String,user_id: String): Result<disc_success_response> {
         return safeApiCall {
-            apiService.discount(courseid,copon)
+            apiService.discount(courseid,copon,user_id)
         }
     }
 

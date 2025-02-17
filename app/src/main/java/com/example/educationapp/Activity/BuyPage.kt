@@ -69,7 +69,7 @@ class BuyPage : AppCompatActivity() {
             else {
                 if (it!!.successbool==true) {
                     Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
-                    binding.fee.text = "Rs. sdsss" + it.discounted_price
+                    binding.fee.text = "Rs. " + it.discounted_price
                     binding.totalfee.text =
                         "Rs. " + (course!!.price!!.toDouble() - it.discounted_price!!.toDouble())
                     price=(course!!.price!!.toDouble() - it.discounted_price!!.toDouble())
@@ -78,10 +78,11 @@ class BuyPage : AppCompatActivity() {
                 }
             }
         }
+        val userid=PreferenceHelper(this).getUserId()
         binding.apply.setOnClickListener{
             val referal=binding.referral.text.toString()
             if(referal.isNotEmpty()){
-                viewModel.applyDiscount(course!!.courseId!!,referal)
+                viewModel.applyDiscount(course!!.courseId!!,referal,userid.toString())
             }
             else{
                 Misc(this).toast("Please enter referral code")

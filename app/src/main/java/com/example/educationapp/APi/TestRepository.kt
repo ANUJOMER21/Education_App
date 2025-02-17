@@ -160,7 +160,7 @@ class TestRepository : RepositoryImpl {
         TODO("Not yet implemented")
     }
 
-    override suspend fun discount(courseid: String, copon: String): Result<disc_success_response> {
+    override suspend fun discount(courseid: String, copon: String,user_id: String): Result<disc_success_response> {
         TODO("Not yet implemented")
     }
 

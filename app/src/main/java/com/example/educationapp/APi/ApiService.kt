@@ -34,7 +34,7 @@ interface ApiService {
     suspend fun updateprofile(@Body profile: UpdateProfileRequest):Response<success_response>
     @POST("discount.php")
     @FormUrlEncoded
-    suspend fun discount(@Field("course_id") courseId: String, @Field("coupon_code") coupon: String):Response<disc_success_response>
+    suspend fun discount(@Field("course_id") courseId: String, @Field("coupon_code") coupon: String,@Field("user_id") user_id: String):Response<disc_success_response>
     @POST("Purchase.php")
     @FormUrlEncoded
     suspend fun purchase(@Field("phone") phone:String,@Field("cost") price:String,@Field("course_id") course_id:String):Response<success_repponse_purchase>

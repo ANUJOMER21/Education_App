@@ -181,9 +181,9 @@ class ApiViewModel(private val repository: RepositoryImpl):ViewModel() {
         }
     }
 
-    fun applyDiscount(courseId: String, coupon: String) {
+    fun applyDiscount(courseId: String, coupon: String,userId: String) {
         viewModelScope.launch {
-            val result = repository.discount(courseId, coupon)
+            val result = repository.discount(courseId, coupon,userId)
             result.fold(
                 onSuccess = {
                     _discountState.value = it
