@@ -174,7 +174,7 @@ android:visibility="gone"
                 android:layout_marginTop="5dp"
                 android:backgroundTint="@color/orange"
                 android:layout_marginBottom="5dp"
-                app:strokeColor="#5B91FF"
+                app:strokeColor="#D50000"
                 >
                 <LinearLayout
                     android:layout_width="match_parent"

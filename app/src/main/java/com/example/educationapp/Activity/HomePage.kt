@@ -37,6 +37,11 @@ class HomePage : AppCompatActivity() {
         viewModel.profileState.observe(this) {
             if (it != null) {
                 it.profile!!.username?.let { it1 -> name(it1) }
+                it.profile!!.phone?.let { it1 ->
+                    PreferenceHelper(this).savePhoneNumber(
+                        it1
+                    )
+                }
             }
         }
     }

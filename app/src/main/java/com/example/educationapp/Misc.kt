@@ -55,6 +55,7 @@ class PreferenceHelper(context: Context) {
     companion object {
         private const val USER_ID = "user_id"
         private const val RATED_COURSE="rated_course"
+        private const val PHONE_NUMBER="phone_number"
     }
 
       fun saveratedcourse(cid:String){
@@ -75,6 +76,16 @@ class PreferenceHelper(context: Context) {
         editor.apply()
     }
 
+    fun savePhoneNumber(phoneNumber: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString(PHONE_NUMBER,phoneNumber)
+        editor.apply()
+    }
+    fun getPhoneNumber(): String? {
+        return sharedPreferences.getString(PHONE_NUMBER, null)
+    }
+
+
     // Retrieve the user ID
     fun getUserId(): Int? {
         return sharedPreferences.getInt(USER_ID, -1)
@@ -84,6 +95,7 @@ class PreferenceHelper(context: Context) {
     fun clearUserId() {
         val editor = sharedPreferences.edit()
         editor.remove(USER_ID)
+        editor.remove(PHONE_NUMBER)
         editor.apply()
     }
 }

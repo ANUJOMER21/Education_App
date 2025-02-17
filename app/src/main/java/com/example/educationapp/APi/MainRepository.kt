@@ -204,6 +204,7 @@ return safeApiCall {
 
     override suspend fun myliveclass(phone: String): Result<get_live_class_details> {
         return safeApiCall {
+            Log.d("PHONE",phone)
             apiService.my_live_class(phone)
         }
     }

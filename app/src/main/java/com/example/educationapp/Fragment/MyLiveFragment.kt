@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.distinctUntilChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
@@ -14,6 +15,7 @@ import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Adapter.CourseLiveClassAdapter
 import com.example.educationapp.Adapter.LiveClassAdapter
 import com.example.educationapp.Misc
+import com.example.educationapp.PreferenceHelper
 import com.example.educationapp.R
 import com.example.educationapp.databinding.FragmentMyLiveBinding
 
@@ -28,72 +30,64 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MyLiveFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-    lateinit var binding:FragmentMyLiveBinding
-    lateinit var viewModel: ApiViewModel
-    lateinit var misc:Misc
+    private var _binding: FragmentMyLiveBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var viewModel: ApiViewModel
+    private lateinit var misc: Misc
+    private var hasFetchedLiveClass = false  // Flag to prevent multiple calls
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding=FragmentMyLiveBinding.inflate(inflater,container,false)
-        misc=Misc(requireContext())
-        val repository=MainRepository()
-        val uid=misc.getid()
-        val rv=binding.mycrv
-        viewModel=
-                ViewModelProvider(this,AuthViewModelFactory(repository)).get(ApiViewModel::class.java)
-                    rv.layoutManager = LinearLayoutManager(requireContext())
-        var phone = ""
+    ): View {
+        _binding = FragmentMyLiveBinding.inflate(inflater, container, false)
+        misc = Misc(requireContext())
 
-        viewModel.fetchProfile(uid.toString())
-        viewModel.profileState.observe(viewLifecycleOwner) { profileState ->
-        profileState?.profile?.phone?.let { phoneNumber ->
+        setupViewModel()
+        setupRecyclerView()
+        observeLiveData()
 
-            viewModel.myLive_class(phoneNumber)
-            viewModel.liveClassDetailsState.observe(viewLifecycleOwner) { liveClassDetailsState ->
-                if (liveClassDetailsState != null) {
-
-                    if (liveClassDetailsState.success == true) {
-                        val liveClassDetails = liveClassDetailsState.data
-                        Log.d("liveClassDetails", liveClassDetails.toString())
-                        val adapter = CourseLiveClassAdapter(requireContext(), liveClassDetails)
-                        rv.adapter = adapter
-                        adapter.notifyDataSetChanged()
-                    }
-                }
-            }
-
-        }
-
-
-        }
-
-        // Inflate the layout for this fragment
         return binding.root
     }
 
+    private fun setupViewModel() {
+        val repository = MainRepository()
+        val factory = AuthViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, factory).get(ApiViewModel::class.java)
+
+        val uid = misc.getid()
+        val phone=PreferenceHelper(requireContext()).getPhoneNumber()
+        Log.d("phone",phone.toString())
+        if (phone != null) {
+            viewModel.myLive_class(phone)
+        }
+    }
+
+    private fun setupRecyclerView() {
+        binding.mycrv.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun observeLiveData() {
+
+
+        viewModel.liveClassDetailsState.observe(viewLifecycleOwner) { liveClassDetailsState ->
+            liveClassDetailsState?.takeIf { it.success == true }?.data?.let { liveClassDetails ->
+                Log.d("liveClassDetails", liveClassDetails.toString())
+                binding.mycrv.adapter = CourseLiveClassAdapter(requireContext(), liveClassDetails).apply {
+                    notifyDataSetChanged()
+                }
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null  // Prevent memory leaks
+    }
+
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MyLiveFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
         fun newInstance(param1: String, param2: String) =
             MyLiveFragment().apply {
                 arguments = Bundle().apply {
@@ -103,3 +97,4 @@ class MyLiveFragment : Fragment() {
             }
     }
 }
+
