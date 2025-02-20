@@ -9,21 +9,52 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityVideoBinding
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.source.hls.HlsMediaSource
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.potyvideo.library.globalEnums.EnumScreenMode
 
 class VideoActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityVideoBinding
+    private lateinit var player: ExoPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
-        val binding= ActivityVideoBinding.inflate(layoutInflater)
+        binding = ActivityVideoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var videoUrl=intent.getStringExtra("videourl")
-        Log.d("VIDEO URL",videoUrl.toString())
-       // videoUrl="https://api.dyntube.com/v1/apps/hls/PD2RDNwkgkee0yWGORdbLQ.m3u8"
-        binding.videoView.setSource(videoUrl!!)
-        binding.videoView.setScreenMode(EnumScreenMode.FULLSCREEN)
 
+        val videoUrl = intent.getStringExtra("videourl")
+        if (videoUrl.isNullOrEmpty()) {
+            Log.e("VIDEO URL", "No video URL provided.")
+            finish()
+            return
+        }
+        Log.d("VIDEO URL", videoUrl)
 
+        // Create a media item using the provided video URL.
+        val mediaItem = MediaItem.fromUri(videoUrl)
+
+        // Build an HLS media source.
+        val hlsMediaSource = HlsMediaSource.Factory(DefaultHttpDataSource.Factory())
+            .createMediaSource(mediaItem)
+
+        // Initialize ExoPlayer.
+        player = ExoPlayer.Builder(this).build().apply {
+            setMediaSource(hlsMediaSource)
+            prepare()
+            playWhenReady = true
+        }
+
+        // Bind the player to the PlayerView.
+        // Make sure your layout's video view is a PlayerView (or similar) with an id like playerView.
+        binding.videoView.player = player
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Release the player when the activity is stopped.
+        player.release()
     }
     private var backPressedTime: Long = 0
     private lateinit var toast: Toast

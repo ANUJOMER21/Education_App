@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.educationapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.educationapp"
@@ -45,8 +45,9 @@ dependencies {
 
 
         implementation ("com.github.dangiashish:Auto-Image-Slider:1.0.6")
-
-
+    implementation("androidx.media3:media3-exoplayer:1.5.1")
+    implementation("androidx.media3:media3-exoplayer-dash:1.5.1")
+    implementation("androidx.media3:media3-ui:1.5.1")
         implementation (libs.auto.image.slider)
     implementation (libs.github.glide)
     // Ktor client for making HTTP requests

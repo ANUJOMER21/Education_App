@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activity.VideoActivity">
-    <com.potyvideo.library.AndExoPlayerView
-        android:id="@+id/videoView"
 
-        app:andexo_show_controller="true"
-        app:andexo_loop="finite"
-        app:andexo_show_full_screen="true"
-        app:andexo_play_when_ready="true"
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/videoView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true" />
+
+
+         />
+
 </LinearLayout>
