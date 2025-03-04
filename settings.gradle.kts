@@ -21,6 +21,7 @@ dependencyResolutionManagement {
         maven {
             url =uri("https://jcenter.bintray.com")
         }
+        maven { url=uri( "https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-android") }
     }
 }
 

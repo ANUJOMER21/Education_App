@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,17 +16,27 @@ import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.Course
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Misc
+import com.example.educationapp.Phonepe.PaymentRepository
+import com.example.educationapp.Phonepe.PaymentState
+import com.example.educationapp.Phonepe.PaymentUtils
+import com.example.educationapp.Phonepe.PaymentViewModel
+import com.example.educationapp.Phonepe.PaymentViewModelFactory
 import com.example.educationapp.PreferenceHelper
 import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityBuyPageBinding
 
 class BuyPage : AppCompatActivity() {
     lateinit var  binding: ActivityBuyPageBinding
+    lateinit var phone_pe_viewmodel:PaymentViewModel
+    private val B2B_PG_REQUEST_CODE = 777
+
     lateinit var viewModel: ApiViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityBuyPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupPhonePe()
+
         val repository= MainRepository()
         viewModel = ViewModelProvider(this, AuthViewModelFactory(repository)).get(ApiViewModel::class.java)
         var phone="";
@@ -106,11 +117,49 @@ class BuyPage : AppCompatActivity() {
         }
         val mobilenumber="+919991329616"
         binding.buynow.setOnClickListener{
-            val message = "Hello sir, I am interested in the course ${course?.courseName}. I would like to purchase it for $price rupees. Please process my request. My registered phone number is $phone."
-            //sendMessageViaWhatsApp(mobilenumber, message, this)
+            val amt: Long =(price*100).toLong()
+               phone_pe_viewmodel.initiatePayment(amt,phone)
 
-              viewModel.purchaseCourse(phone,course!!.courseId!!,price.toString())
         }
+        phone_pe_viewmodel.paymentState.observe(this){state->
+            when(state){
+                is PaymentState.Loading -> Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT)
+                    .show()
+
+                is PaymentState.Ready -> startActivityForResult(state.intent, B2B_PG_REQUEST_CODE)
+                is PaymentState.Error -> {
+                    Log.d("Error", state.message)
+                    Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
+                }
+
+                is PaymentState.Result -> {
+                    if(state.success) {
+                        viewModel.purchaseCourse(phone, course!!.courseId!!, price.toString())
+
+                            }
+                    Toast.makeText(this, state.message, Toast.LENGTH_SHORT).show()
+
+
+                }
+            }
+        }
+
+
+
+
+
+
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == B2B_PG_REQUEST_CODE) {
+            phone_pe_viewmodel.handlePaymentResult(resultCode) // Delegate to ViewModel
+        }
+    }
+    private fun setupPhonePe() {
+        val paymentUtils = PaymentUtils()
+        val paymentRepository = PaymentRepository(this, paymentUtils)
+        phone_pe_viewmodel= ViewModelProvider(this, PaymentViewModelFactory(paymentRepository)).get(PaymentViewModel::class.java)
 
     }
 

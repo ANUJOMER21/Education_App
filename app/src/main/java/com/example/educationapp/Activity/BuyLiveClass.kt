@@ -15,15 +15,29 @@ import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Misc
+import com.example.educationapp.Phonepe.PaymentRepository
+import com.example.educationapp.Phonepe.PaymentState
+import com.example.educationapp.Phonepe.PaymentUtils
+import com.example.educationapp.Phonepe.PaymentViewModel
+import com.example.educationapp.Phonepe.PaymentViewModelFactory
 import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityBuyLiveClassBinding
 
 class BuyLiveClass : AppCompatActivity() {
+    private fun setupPhonePe() {
+        val paymentUtils = PaymentUtils()
+        val paymentRepository = PaymentRepository(this, paymentUtils)
+        phone_pe_viewmodel= ViewModelProvider(this, PaymentViewModelFactory(paymentRepository)).get(PaymentViewModel::class.java)
+
+    }
     lateinit var binding: ActivityBuyLiveClassBinding
     lateinit var viewModel: ApiViewModel
+    lateinit var phone_pe_viewmodel: PaymentViewModel
+    private val B2B_PG_REQUEST_CODE = 777
     lateinit var Misc: Misc
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setupPhonePe()
         binding=ActivityBuyLiveClassBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Misc=Misc(this)
@@ -71,14 +85,44 @@ class BuyLiveClass : AppCompatActivity() {
 
             val message = "Hello sir, I am interested in the live class of id ${cid}. I would like to enroll in it for $cost rupees. Please process my request. My registered phone number is $phone."
          //   sendMessageViaWhatsApp("+919991329616", message, this)
-           viewModel.purchaseLiveClass(
-               phone,
-               cid.toString(),
-               cost.toString()
-           )
+            val c= (cost?:"0").toDouble()
+            val amt: Long =(c*100).toLong()
+            phone_pe_viewmodel.initiatePayment(amt,phone)
 
         }
+        phone_pe_viewmodel.paymentState.observe(this){state->
+            when(state){
+                is PaymentState.Loading -> Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT)
+                    .show()
 
+                is PaymentState.Ready -> startActivityForResult(state.intent, B2B_PG_REQUEST_CODE)
+                is PaymentState.Error -> {
+                    Log.d("Error", state.message)
+                    Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
+                }
+
+                is PaymentState.Result -> {
+                    if(state.success) {
+                        viewModel.purchaseLiveClass(
+                            phone,
+                            cid.toString(),
+                            cost.toString()
+                        )
+                            }
+                    Toast.makeText(this, state.message, Toast.LENGTH_SHORT).show()
+
+
+                }
+            }
+        }
+
+
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == B2B_PG_REQUEST_CODE) {
+            phone_pe_viewmodel.handlePaymentResult(resultCode) // Delegate to ViewModel
+        }
     }
     fun sendMessageViaWhatsApp(phoneNumber: String, message: String, context: Context) {
         try {

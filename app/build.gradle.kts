@@ -43,6 +43,7 @@ android {
 dependencies {
 //    implementation (libs.autoimageslider)
 
+    implementation ("phonepe.intentsdk.android.release:IntentSDK:2.4.3")
 
         implementation ("com.github.dangiashish:Auto-Image-Slider:1.0.6")
     implementation("androidx.media3:media3-exoplayer:1.5.1")

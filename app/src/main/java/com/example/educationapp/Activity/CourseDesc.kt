@@ -18,6 +18,7 @@ import com.example.educationapp.databinding.ActivityCourseDescBinding
 class CourseDesc : AppCompatActivity() {
     private lateinit var binding: ActivityCourseDescBinding
     private lateinit var viewmodel:ApiViewModel
+    private lateinit var course:Course
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityCourseDescBinding.inflate(layoutInflater)
@@ -28,7 +29,7 @@ class CourseDesc : AppCompatActivity() {
         binding.back.setOnClickListener {
             onBackPressed()
         }
-        val course=intent.getSerializableExtra("course") as? Course
+         course= (intent.getSerializableExtra("course") as? Course)!!
         if(course!=null) {
             Glide.with(this).load(course.imageUrl).into(binding.banner)
             binding.coursename.text = course.courseName
@@ -97,5 +98,10 @@ class CourseDesc : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        iscoursepurchsaed(course)
     }
 }
