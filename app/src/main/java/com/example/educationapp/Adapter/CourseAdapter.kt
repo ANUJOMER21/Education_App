@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.educationapp.APi.Course
 import com.example.educationapp.Activity.CourseDesc
-import com.example.educationapp.Activity.CoursePage
 import com.example.educationapp.R
 
 class CourseAdapter(

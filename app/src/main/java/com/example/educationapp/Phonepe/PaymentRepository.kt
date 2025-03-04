@@ -41,7 +41,7 @@ class PaymentRepository(
             mobileNumber = phone,
             callbackUrl = "https://api.phonepe.com/apis/hermes/pg/v1/pay",
             paymentInstrument = mapOf("type" to "PAY_PAGE"),
-            deviceContext = mapOf("deviceOS" to "ANDROID")
+           // deviceContext = mapOf("deviceOS" to "ANDROID")
         )
         Log.d("PaymentViewModel",paymentRequest.merchantTransactionId)
 

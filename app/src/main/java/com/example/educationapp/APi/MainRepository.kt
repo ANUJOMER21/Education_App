@@ -2,7 +2,6 @@ package com.example.educationapp.APi
 
 
 import android.util.Log
-import com.codebyashish.autoimageslider.Models.ImageSlidesModel
 import retrofit2.Response
 
 // Main Repository Implementation

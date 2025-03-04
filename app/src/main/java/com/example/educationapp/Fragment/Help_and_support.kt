@@ -12,9 +12,7 @@ import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Misc
-import com.example.educationapp.R
 import com.example.educationapp.databinding.FragmentHelpAndSupportBinding
-import com.example.educationapp.databinding.FragmentLiveBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.educationapp.APi.Category
 import com.example.educationapp.Activity.AllCourse
-import com.example.educationapp.Adapter.CourseAdapter.Vh
 import com.example.educationapp.R
 
 class CategoryAdapter(val context: Context,val categoryList: ArrayList<Category>) :

@@ -7,16 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.distinctUntilChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Adapter.CourseLiveClassAdapter
-import com.example.educationapp.Adapter.LiveClassAdapter
 import com.example.educationapp.Misc
 import com.example.educationapp.PreferenceHelper
-import com.example.educationapp.R
 import com.example.educationapp.databinding.FragmentMyLiveBinding
 
 // TODO: Rename parameter arguments, choose names that match

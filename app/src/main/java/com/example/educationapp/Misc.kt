@@ -8,7 +8,6 @@ import android.content.SharedPreferences
 import android.widget.Toast
 import com.example.educationapp.Activity.MainActivity
 import com.example.educationapp.Activity.SignUpActivity
-import com.google.gson.Gson
 
 class Misc (val context: Context){
     fun toast(message:String){

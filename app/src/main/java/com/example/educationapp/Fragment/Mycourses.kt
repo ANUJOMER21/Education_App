@@ -8,14 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Adapter.MyCourseAdapter
 import com.example.educationapp.Misc
-import com.example.educationapp.R
-import com.example.educationapp.databinding.FragmentHomeBinding
 import com.example.educationapp.databinding.FragmentMycoursesBinding
 
 // TODO: Rename parameter arguments, choose names that match

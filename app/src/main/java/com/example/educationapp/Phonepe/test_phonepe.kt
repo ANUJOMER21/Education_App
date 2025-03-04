@@ -1,19 +1,11 @@
 package com.example.educationapp.Phonepe
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityTestPhonepeBinding
 
 class test_phonepe : AppCompatActivity() {

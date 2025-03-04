@@ -1,18 +1,13 @@
 package com.example.educationapp.Activity
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
-import com.example.educationapp.APi.Profile
 import com.example.educationapp.APi.UpdateProfileRequest
 import com.example.educationapp.Misc
-import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityProfileSettingPageBinding
 
 class ProfileSettingPage : AppCompatActivity() {

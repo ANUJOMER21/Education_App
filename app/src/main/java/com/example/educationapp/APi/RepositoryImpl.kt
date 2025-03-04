@@ -1,7 +1,5 @@
 package com.example.educationapp.APi
 
-import com.codebyashish.autoimageslider.Models.ImageSlidesModel
-
 interface RepositoryImpl {
     suspend fun login(username: String, password: String): Result<LoginResponse>
     suspend fun signup(username: String, password: String, phone: String, referal: String,email:String,secondphone:String): Result<LoginResponse>

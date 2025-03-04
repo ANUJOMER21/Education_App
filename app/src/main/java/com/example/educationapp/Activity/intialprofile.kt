@@ -10,7 +10,6 @@ import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.APi.Profile
 import com.example.educationapp.APi.UpdateProfileRequest
-import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityIntialprofileBinding
 
 class intialprofile : AppCompatActivity() {

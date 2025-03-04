@@ -9,14 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.educationapp.APi.ApiService
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.BASE_URL
 import com.example.educationapp.APi.MainRepository
 import com.example.educationapp.Misc
 import com.example.educationapp.R
-import com.example.educationapp.databinding.FragmentProfileBinding
 import com.example.educationapp.databinding.FragmentReferEarnBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText

@@ -1,11 +1,7 @@
 package com.example.educationapp.Activity
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivitySupportPageBinding
 
 class Support_page : AppCompatActivity() {

@@ -1,5 +1,4 @@
 package com.example.educationapp.APi
-import com.codebyashish.autoimageslider.Models.ImageSlidesModel
 import kotlinx.coroutines.delay
 class TestRepository : RepositoryImpl {
     override suspend fun login(username: String, password: String): Result<LoginResponse> {

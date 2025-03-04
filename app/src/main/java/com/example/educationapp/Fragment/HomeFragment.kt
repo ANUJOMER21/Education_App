@@ -8,13 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codebyashish.autoimageslider.Enums.ImageScaleType
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
-import com.example.educationapp.APi.TestRepository
 import com.example.educationapp.Activity.AllCourse
 import com.example.educationapp.Activity.SeeAllCategories
 import com.example.educationapp.Adapter.CategoryAdapter

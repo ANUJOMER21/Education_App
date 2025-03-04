@@ -2,22 +2,14 @@ package com.example.educationapp.Activity
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.educationapp.APi.ApiViewModel
 import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.MainRepository
-import com.example.educationapp.APi.TestRepository
 import com.example.educationapp.Adapter.CourseAdapter
 import com.example.educationapp.Misc
-import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityAllCourseBinding
 
 class AllCourse : AppCompatActivity() {

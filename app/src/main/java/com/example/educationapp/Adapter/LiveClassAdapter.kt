@@ -3,14 +3,11 @@ package com.example.educationapp.Adapter
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.educationapp.APi.Course
-import com.example.educationapp.Activity.BuyLiveClass
 import com.example.educationapp.Activity.liveclass_page
-import com.example.educationapp.Activity.liveclassrequestpage
 import com.example.educationapp.R
 import com.example.educationapp.databinding.LessonviewBinding
 

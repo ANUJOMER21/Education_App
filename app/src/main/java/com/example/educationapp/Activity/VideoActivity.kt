@@ -5,15 +5,11 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.educationapp.R
 import com.example.educationapp.databinding.ActivityVideoBinding
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.source.hls.HlsMediaSource
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
-import com.potyvideo.library.globalEnums.EnumScreenMode
 
 class VideoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityVideoBinding

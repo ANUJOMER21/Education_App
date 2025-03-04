@@ -14,8 +14,6 @@ import com.example.educationapp.Activity.ProfileSettingPage
 import com.example.educationapp.Activity.Support_page
 import com.example.educationapp.Activity.changepassword
 import com.example.educationapp.Misc
-import com.example.educationapp.R
-import com.example.educationapp.databinding.FragmentMycoursesBinding
 import com.example.educationapp.databinding.FragmentProfileBinding
 
 // TODO: Rename parameter arguments, choose names that match

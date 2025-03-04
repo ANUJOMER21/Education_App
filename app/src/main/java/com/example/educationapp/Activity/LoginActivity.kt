@@ -3,7 +3,6 @@ package com.example.educationapp.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.educationapp.APi.ApiViewModel
@@ -11,7 +10,6 @@ import com.example.educationapp.APi.AuthViewModelFactory
 import com.example.educationapp.APi.LoginResponse
 import com.example.educationapp.APi.LoginUiState
 import com.example.educationapp.APi.MainRepository
-import com.example.educationapp.APi.TestRepository
 import com.example.educationapp.Misc
 import com.example.educationapp.PreferenceHelper
 import com.example.educationapp.databinding.ActivityLoginBinding
